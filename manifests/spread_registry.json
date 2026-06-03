@@ -198,5 +198,23 @@
     ],
     "cost_guard": "Abort and ask Andre if estimated cost > $3.00",
     "current_active_path": "browser_ui_relay (see RUNBOOK_browser_spread.md)"
+  },
+
+  "routing_priority": {
+    "rule": "Sunk-cost models first. API tokens only when sunk models can't do it.",
+    "sunk_cost_models": ["Claude Opus 4.8 (UI)", "Claude Code", "GPT-5 UI", "Perplexity Pro"],
+    "current_problem": "V4-flash handling ~95% of tasks including ones that need Opus or Claude Code",
+    "target_split": {
+      "claude_code": "40% of implementation tasks",
+      "opus_ui": "20% of strategic/irreversible decisions",
+      "v4_flash": "30% of routine/fast tasks",
+      "r1_gemini_api": "10% of reasoning/vision tasks"
+    },
+    "see": "architecture/ROUTING_RULES.md"
+  },
+
+  "accountability": {
+    "see": "architecture/ACCOUNTABILITY_GOVERNOR.md",
+    "summary": "Hermes detects research/strategy escape loops and blocks new tasks until something ships"
   }
 }

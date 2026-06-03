@@ -7,15 +7,14 @@ It tells you where everything lives and how to consume it.
 
 ## System actors quick-reference
 
-| Actor | Read from | Write to | Notes |
-|---|---|---|---|
-| Hermes | `goals/`, `board_reports/`, `HERMES_README.md` | `goals/YYYY-MM-DD_nightly.md` | See `HERMES_README.md` |
-| Claw | all files | `board_reports/`, sanitized context | See `CLAW_README.md` |
-| Claude UI | this repo via GitHub or paste packet | board format `.md` artifacts | See `BROWSER_LLM_PACKET.md` |
-| GPT UI | this repo via GitHub or paste packet | board format `.md` artifacts | See `BROWSER_LLM_PACKET.md` |
-| Perplexity | this repo via GitHub | research memos | See `BROWSER_LLM_PACKET.md` |
-| Andre | everything | approvals, corrections | Final judgment on all |
-| Marcela | `MARCELA_RUNBOOK.md` only | copy-paste packets | Must not interpret |
+| Actor | Model | Read from | Write to | Notes |
+|---|---|---|---|---|
+| Hermes | DeepSeek V4-flash + OpenRouter | `goals/`, `board_reports/` | `goals/YYYY-MM-DD_nightly.md` | See `HERMES_README.md` |
+| Claw (OpenClaw) | DeepSeek V4-flash | all files | `board_reports/`, sanitized context | Port 18789. See `CLAW_README.md` |
+| Claude UI | Opus (browser) | this repo via GitHub or paste | board format `.md` artifacts | See `BROWSER_LLM_PACKET.md` |
+| GPT UI | GPT-5 (browser) | this repo via GitHub or paste | board format `.md` artifacts | See `BROWSER_LLM_PACKET.md` |
+| Perplexity | Pro (browser) | this repo via GitHub | research memos | See `BROWSER_LLM_PACKET.md` |
+| Andre | — | everything | approvals, git via Telegram/cron | CEO, final judgment |
 
 ---
 

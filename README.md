@@ -9,15 +9,14 @@ Every orchestration actor — Hermes, Claw, Claude UI, GPT UI, Perplexity — re
 
 ## Who uses this repo
 
-| Actor | Role | Access method |
-|---|---|---|
-| **Andre** | CEO — final judgment | Direct Git, browser |
-| **Hermes** | Chairman / nightly goal generator | Git pull + file read |
-| **Claw (Claude Code)** | Execution CTO | Git pull/push, local workspace |
-| **Claude UI** | Browser LLM — planning & reports | GitHub web or copy-paste packet |
-| **GPT UI** | Browser LLM — co-chairman cycle | GitHub web or copy-paste packet |
-| **Perplexity** | Browser LLM — research | GitHub web or copy-paste packet |
-| **Marcela** | Human relay — copy-paste only | MARCELA_RUNBOOK.md |
+| Actor | Model | Role | Access method |
+|---|---|---|---|
+| **Andre** | — | CEO — final judgment | Telegram terminal, cron, browser |
+| **Hermes** | DeepSeek V4-flash + OpenRouter | Chairman / nightly goal generator | Git pull + file read |
+| **Claw (OpenClaw)** | DeepSeek V4-flash | Execution CTO (port 18789) | Git pull/push, local workspace |
+| **Claude UI** | Claude Opus (browser) | Co-chairman, planning & reports | GitHub web or copy-paste packet |
+| **GPT UI** | GPT-5 (browser) | Co-chairman cycle | GitHub web or copy-paste packet |
+| **Perplexity** | Perplexity Pro (browser) | Research | GitHub web or copy-paste packet |
 
 ---
 
