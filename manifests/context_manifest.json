@@ -1,0 +1,496 @@
+{
+  "generated_at": "2026-06-03T04:14:58.885499+00:00",
+  "generated_by": "check_context_integrity.py",
+  "repo_root": "/home/a/Desktop/isaura-hermes-context",
+  "total_files": 54,
+  "cloud_safe": 54,
+  "blocked": 0,
+  "files": [
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/workspace/AGENTS.md",
+      "sanitized_path": "workspace/AGENTS.md",
+      "sha256": "240d299fe05a0984b916ed386328e0b7e6307bcd7fb9d8ed710defc0057e97c0",
+      "modified_time": "2026-05-03T20:53:53.271475+00:00",
+      "size_bytes": 7835,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    },
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/workspace/CAPABILITIES.md",
+      "sanitized_path": "workspace/CAPABILITIES.md",
+      "sha256": "8fc4922cf4d345bb1fc2047661f7a76c022588678791a3437dd9a0cb4e022ba7",
+      "modified_time": "2026-05-04T04:53:06.476344+00:00",
+      "size_bytes": 2132,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    },
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/workspace/GOVERNANCE.md",
+      "sanitized_path": "workspace/GOVERNANCE.md",
+      "sha256": "c78b6010be5cbba5aa453d8ffe50fa0f57ad975588341b8bf230c9b473887083",
+      "modified_time": "2026-06-01T10:48:18.265748+00:00",
+      "size_bytes": 8199,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    },
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/workspace/HEARTBEAT.md",
+      "sanitized_path": "workspace/HEARTBEAT.md",
+      "sha256": "95bc10b3eceb8634b8fea321ccafe6e8d047f86d34239769e890071984c15590",
+      "modified_time": "2026-05-04T03:54:09.955516+00:00",
+      "size_bytes": 271,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    },
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/workspace/IDENTITY.md",
+      "sanitized_path": "workspace/IDENTITY.md",
+      "sha256": "579badb89dfe5eb2977fc0c7813b1442661deab9e2600eb0d6177f178660a38a",
+      "modified_time": "2026-05-03T21:15:37.189999+00:00",
+      "size_bytes": 279,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    },
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/workspace/SOUL.md",
+      "sanitized_path": "workspace/SOUL.md",
+      "sha256": "9e4b974ac445d559cc06a9a6891e7f10b1222b92b84d76d675bd6c3059aa49b8",
+      "modified_time": "2026-05-03T21:52:51.981205+00:00",
+      "size_bytes": 2206,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    },
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/workspace/TOOLS.md",
+      "sanitized_path": "workspace/TOOLS.md",
+      "sha256": "15cdfe57fcfa6d83888e215176f40b415ff2b9a51afe96b4d4134f2f5a8cfe68",
+      "modified_time": "2026-05-03T20:53:53.272475+00:00",
+      "size_bytes": 920,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    },
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/workspace/USER.md",
+      "sanitized_path": "workspace/USER.md",
+      "sha256": "94bda07c927d096067ebabca6f0cfa76fcaa3fcaf38c317ec7791507f8c000b4",
+      "modified_time": "2026-05-03T21:18:09.330367+00:00",
+      "size_bytes": 1396,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    },
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/workspace/isaura-context.md",
+      "sanitized_path": "workspace/isaura-context.md",
+      "sha256": "fa7cd5f409969985cf6bf8f8c531b34ca76fe6b501d23bd12414d01ba92cd813",
+      "modified_time": "2026-05-28T09:14:26.098080+00:00",
+      "size_bytes": 8696,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    },
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/workspace/isaura-spec-v1.md",
+      "sanitized_path": "workspace/isaura-spec-v1.md",
+      "sha256": "c3778b816b54fee0b5eb481b013b5e87e9cf9b42cec00cd5a3971a7e6c94a0d9",
+      "modified_time": "2026-05-09T05:57:51.609003+00:00",
+      "size_bytes": 7509,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    },
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/workspace/opus-escalation-protocol.md",
+      "sanitized_path": "workspace/opus-escalation-protocol.md",
+      "sha256": "7a2e2c4533e67c54425e1b4c46208f87f85d1b1859772b1899485e23074f0364",
+      "modified_time": "2026-05-09T03:36:47.168908+00:00",
+      "size_bytes": 2393,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    },
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/workspace/opus-prompt-2026-06-01.md",
+      "sanitized_path": "workspace/opus-prompt-2026-06-01.md",
+      "sha256": "f628007765bed794d6c420c21c6e29798bc557e18afda834cfec88f78311c54f",
+      "modified_time": "2026-06-01T06:06:17.819407+00:00",
+      "size_bytes": 11780,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    },
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/workspace/package-lock.json",
+      "sanitized_path": "workspace/package-lock.json",
+      "sha256": "43094a03fe889e47340092e6866f75965505aae67bf9a1adaee6984a0923fb26",
+      "modified_time": "2026-05-09T02:50:58.722355+00:00",
+      "size_bytes": 30384,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    },
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/workspace/package.json",
+      "sanitized_path": "workspace/package.json",
+      "sha256": "beef6090a5808868614b6f175ca9f499b6a1b520bdde63869100023312b1230a",
+      "modified_time": "2026-05-09T02:50:58.695355+00:00",
+      "size_bytes": 301,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    },
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/workspace/hermes-latest/output.md",
+      "sanitized_path": "workspace/hermes-latest/output.md",
+      "sha256": "b74ab8e7322c49287ded004bf77732ad0dc6cbb27252fd9990831c0d34a17a99",
+      "modified_time": "2026-05-31T21:03:38.653976+00:00",
+      "size_bytes": 7074,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    },
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/workspace/hermes-latest/raw/groq-llama-3.1-8b.md",
+      "sanitized_path": "workspace/hermes-latest/raw/groq-llama-3.1-8b.md",
+      "sha256": "56f8c2f469f54d945af9de7b1fa324e83f395336dc819a788252059cd7d48ae2",
+      "modified_time": "2026-05-31T21:03:37.257958+00:00",
+      "size_bytes": 1415,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    },
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/workspace/hermes-latest/raw/groq-llama-3.3-70b.md",
+      "sanitized_path": "workspace/hermes-latest/raw/groq-llama-3.3-70b.md",
+      "sha256": "d0410327c3e86bb5c81ef12cfad9fe8fa8fb6d781139f892035646f7a0f8f6cf",
+      "modified_time": "2026-05-31T21:03:38.653976+00:00",
+      "size_bytes": 2388,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    },
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/workspace/hermes-latest/raw/groq-llama-4-scout.md",
+      "sanitized_path": "workspace/hermes-latest/raw/groq-llama-4-scout.md",
+      "sha256": "ae2f8a6d9ce6b958099a18d73f6865a044a7da2ff07877286810dfdb42994189",
+      "modified_time": "2026-05-31T21:03:37.830966+00:00",
+      "size_bytes": 2784,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    },
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/workspace/memory/2026-06-01.md",
+      "sanitized_path": "workspace/memory/2026-06-01.md",
+      "sha256": "5a6e695ae9f9d69a956b77628667c57d31788aab253271405320e2529b4e5474",
+      "modified_time": "2026-06-01T10:48:37.901200+00:00",
+      "size_bytes": 2329,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    },
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/workspace/skills/markdown/SKILL.md",
+      "sanitized_path": "workspace/skills/markdown/SKILL.md",
+      "sha256": "848a4962c2cdc0e462fa416480b1c6a91fa512f1faeeb50f32e34ce9c83240f2",
+      "modified_time": "2026-05-03T21:55:12.849822+00:00",
+      "size_bytes": 2055,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    },
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/workspace/skills/markdown/_meta.json",
+      "sanitized_path": "workspace/skills/markdown/_meta.json",
+      "sha256": "dbb0632297de91d4c0e19c2fc0bf3c3bce1e4f9f0a542115e879df7e70d273a8",
+      "modified_time": "2026-05-03T21:55:12.849225+00:00",
+      "size_bytes": 127,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    },
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/workspace/skills/google-calendar/_meta.json",
+      "sanitized_path": "workspace/skills/google-calendar/_meta.json",
+      "sha256": "c4c740179eea0f7e5d301650425303cbc3fb3bb4e48d911b2de7bbb74e1d3133",
+      "modified_time": "2026-05-03T21:54:46.679713+00:00",
+      "size_bytes": 134,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    },
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/workspace/skills/screenshot/SKILL.md",
+      "sanitized_path": "workspace/skills/screenshot/SKILL.md",
+      "sha256": "e47b2807c5ff734b50ec4627a0d19377eec34083e63cc3f33786bebd0802c492",
+      "modified_time": "2026-05-03T21:54:37.705009+00:00",
+      "size_bytes": 7578,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    },
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/workspace/skills/screenshot/_meta.json",
+      "sanitized_path": "workspace/skills/screenshot/_meta.json",
+      "sha256": "90a4468864849b520ca693e887cfcc0aef4d58e60124910792691df30ee22b35",
+      "modified_time": "2026-05-03T21:54:37.703980+00:00",
+      "size_bytes": 129,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    },
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/workspace/skills/exa/_meta.json",
+      "sanitized_path": "workspace/skills/exa/_meta.json",
+      "sha256": "94a7f3b1d718794e9131fbd969de6e16272a404df45a81470cdfc1a067625c04",
+      "modified_time": "2026-05-03T21:54:37.900900+00:00",
+      "size_bytes": 122,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    },
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/workspace/skills/tavily/_meta.json",
+      "sanitized_path": "workspace/skills/tavily/_meta.json",
+      "sha256": "0399d132849cd7b7d6e0daed1e94e68187fa1b111da4f55804fd8126111392c6",
+      "modified_time": "2026-05-03T21:54:29.568514+00:00",
+      "size_bytes": 125,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    },
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/workspace/skills/cron/SKILL.md",
+      "sanitized_path": "workspace/skills/cron/SKILL.md",
+      "sha256": "7ccfcf48758140914ad2099fb2c5b5e27ca75c7bac97ffd38d51557b63c61cc7",
+      "modified_time": "2026-05-03T21:54:38.327470+00:00",
+      "size_bytes": 1553,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    },
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/workspace/skills/cron/_meta.json",
+      "sanitized_path": "workspace/skills/cron/_meta.json",
+      "sha256": "3bf04afa4757c1770942070d697ed24ec8e0381a2508ca5a2a0fa75c61a36525",
+      "modified_time": "2026-05-03T21:54:38.326882+00:00",
+      "size_bytes": 123,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    },
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/workspace/skills/cron/skill.json",
+      "sanitized_path": "workspace/skills/cron/skill.json",
+      "sha256": "dc4d0a026f0f6effeec6fa4d224b7591dd04f9f823986f8790097ddb36cb135c",
+      "modified_time": "2026-05-03T21:54:38.329416+00:00",
+      "size_bytes": 525,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    },
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/workspace/skills/cron/references/philosophy.md",
+      "sanitized_path": "workspace/skills/cron/references/philosophy.md",
+      "sha256": "46324e6dfb11dd4c8c0e67a0aa6f5fd363d242f66c6d61686d04c61fa8eda4ca",
+      "modified_time": "2026-05-03T21:54:38.328745+00:00",
+      "size_bytes": 234,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    },
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/workspace/skills/hermes-cortex/SKILL.md",
+      "sanitized_path": "workspace/skills/hermes-cortex/SKILL.md",
+      "sha256": "574371f5c3bb902aaecd32b59bac1c414b50f92d67ce043dcf62cae759439279",
+      "modified_time": "2026-05-29T18:18:10.502789+00:00",
+      "size_bytes": 4251,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    },
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/workspace/skills/hermes-cortex/output.md",
+      "sanitized_path": "workspace/skills/hermes-cortex/output.md",
+      "sha256": "57dccf831908ee38cf0b56754db395bfa23d8b3f569d3c8a4e3e37a15d996a67",
+      "modified_time": "2026-05-09T18:00:02.507247+00:00",
+      "size_bytes": 1769,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    },
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/workspace/skills/hermes-cortex/package-lock.json",
+      "sanitized_path": "workspace/skills/hermes-cortex/package-lock.json",
+      "sha256": "a031b4e5feb55e8964104eebda0208af4bd1850f8abe482027e7ef46a6cb83df",
+      "modified_time": "2026-05-29T18:18:38.799928+00:00",
+      "size_bytes": 16811,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    },
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/workspace/skills/hermes-cortex/package.json",
+      "sanitized_path": "workspace/skills/hermes-cortex/package.json",
+      "sha256": "c563862852c88365ec6605ec0d8dc21804f064531cb260e63ace74b7bcd50c6f",
+      "modified_time": "2026-05-29T18:18:38.785928+00:00",
+      "size_bytes": 353,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    },
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/workspace/skills/gmail/_meta.json",
+      "sanitized_path": "workspace/skills/gmail/_meta.json",
+      "sha256": "b1b3acadd8ef2e28300d69d0ec7196b5087caa35f5ef70a4abde0e92d5724638",
+      "modified_time": "2026-05-03T21:54:46.344741+00:00",
+      "size_bytes": 124,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    },
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/workspace/skills/csv/SKILL.md",
+      "sanitized_path": "workspace/skills/csv/SKILL.md",
+      "sha256": "7c1c6c8cd6cfa9924203152f9e7218a610faaf4419db100825d23e24b01b2354",
+      "modified_time": "2026-05-03T21:55:25.555048+00:00",
+      "size_bytes": 1941,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    },
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/workspace/skills/csv/_meta.json",
+      "sanitized_path": "workspace/skills/csv/_meta.json",
+      "sha256": "3151115fda42ea2020cfb81405e3e8d2c6e242289a1a97811d245a7e825e245b",
+      "modified_time": "2026-05-03T21:55:25.553977+00:00",
+      "size_bytes": 122,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    },
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/workspace/skills/telegram-api/_meta.json",
+      "sanitized_path": "workspace/skills/telegram-api/_meta.json",
+      "sha256": "132bb487312df3b3f7012eac2680bb1ccbb36cfc8f59fb1096280953a4a418c7",
+      "modified_time": "2026-05-03T21:54:46.518503+00:00",
+      "size_bytes": 131,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    },
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/workspace/design/buying-agent-meta-prompt-v2.md",
+      "sanitized_path": "workspace/design/buying-agent-meta-prompt-v2.md",
+      "sha256": "fc365ea6c0b99e18c3bcf0372d8376b16bcf2665a3ef1ad3873f77e269690fc9",
+      "modified_time": "2026-05-05T16:24:13.214350+00:00",
+      "size_bytes": 18283,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    },
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/workspace/design/buying-agent-meta-prompt-v3.md",
+      "sanitized_path": "workspace/design/buying-agent-meta-prompt-v3.md",
+      "sha256": "983c972d4fa958bf1f2ade5e85e579af96d34dd246a9f7e025bbba78f5452a7b",
+      "modified_time": "2026-05-05T16:29:34.757686+00:00",
+      "size_bytes": 20708,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    },
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/workspace/design/buying-agent-orchestration.md",
+      "sanitized_path": "workspace/design/buying-agent-orchestration.md",
+      "sha256": "aa4a107e67f9afa429bda5c2f65a887c1aca0380ea747ba822228d98040f6819",
+      "modified_time": "2026-05-05T14:42:44.260037+00:00",
+      "size_bytes": 12858,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    },
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/workspace/runs/2026-05-09_smg-architecture.md",
+      "sanitized_path": "workspace/runs/2026-05-09_smg-architecture.md",
+      "sha256": "bd769f38663de649a1b27f16a309080f4e6813af75feca09a7e56005976ff722",
+      "modified_time": "2026-05-09T05:33:19.658057+00:00",
+      "size_bytes": 5785,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    },
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/workspace/runs/2026-05-15_prospector-santa-teresa-es.md",
+      "sanitized_path": "workspace/runs/2026-05-15_prospector-santa-teresa-es.md",
+      "sha256": "3c26c0e560a4bc5f82556ffdcbaf52210caba1d63dd98c1fc7674b3971724baf",
+      "modified_time": "2026-05-15T17:18:04.920119+00:00",
+      "size_bytes": 3872,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    },
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/workspace/runs/2026-05-15_techboard-security-metaprompt.md",
+      "sanitized_path": "workspace/runs/2026-05-15_techboard-security-metaprompt.md",
+      "sha256": "f1a523e9436ae8bbcbec9bf75053aaf564a25da1dff16bc3e6588f1b37c75aa8",
+      "modified_time": "2026-05-15T16:57:18.754047+00:00",
+      "size_bytes": 10358,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    },
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/isaura-goal-metaprompt/BOARD_REPORT_01_claude.md",
+      "sanitized_path": "isaura-goal-metaprompt/BOARD_REPORT_01_claude.md",
+      "sha256": "29449afad6416cd4eeb25ca41e76344566b0796536ea6069724880835a019132",
+      "modified_time": "2026-05-29T13:25:44+00:00",
+      "size_bytes": 4581,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    },
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/isaura-goal-metaprompt/SKILL.md",
+      "sanitized_path": "isaura-goal-metaprompt/SKILL.md",
+      "sha256": "a7b8961f9add4fb270d16d2c792cc443edf50a352411df651b115607891cec62",
+      "modified_time": "2026-06-01T02:31:34.489574+00:00",
+      "size_bytes": 13364,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    },
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/isaura-goal-metaprompt/goal2.json",
+      "sanitized_path": "isaura-goal-metaprompt/goal2.json",
+      "sha256": "61e8b57785ed15a3f6c44d0d17845260fcc86fbdb1d74753148020bb91ec44d5",
+      "modified_time": "2026-05-29T13:25:44+00:00",
+      "size_bytes": 3925,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    },
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/isaura-goal-metaprompt/sugestoes-para-opus.json",
+      "sanitized_path": "isaura-goal-metaprompt/sugestoes-para-opus.json",
+      "sha256": "4b468cd0cb35a478295aea7c5934f3bf27e8e488727e72a2735333ec382d366a",
+      "modified_time": "2026-05-28T08:25:51.339797+00:00",
+      "size_bytes": 10530,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    },
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/isaura-goal-metaprompt/sugestoes-para-opus.md",
+      "sanitized_path": "isaura-goal-metaprompt/sugestoes-para-opus.md",
+      "sha256": "a2bbe7f8ad3b2adce59369269d9a33d4987f484ae749051a30333487b8be6562",
+      "modified_time": "2026-05-28T08:18:39.993541+00:00",
+      "size_bytes": 7777,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    },
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/isaura-goal-metaprompt/references/dual-brain-flow.md",
+      "sanitized_path": "isaura-goal-metaprompt/references/dual-brain-flow.md",
+      "sha256": "551a25a7916a4bffb3c0c097f8f3a51c891a7fe0e724df5aafb7f75114b927b7",
+      "modified_time": "2026-05-29T08:38:48.995704+00:00",
+      "size_bytes": 1829,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    },
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/isaura-goal-metaprompt/references/evolution-whatsapp-pitfalls.md",
+      "sanitized_path": "isaura-goal-metaprompt/references/evolution-whatsapp-pitfalls.md",
+      "sha256": "1ef3120c7a728215f9dfe3c4489c6b862fb2690080f0ac415bba8cfd477886d6",
+      "modified_time": "2026-05-29T10:44:39.485004+00:00",
+      "size_bytes": 2070,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    },
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/isaura-goal-metaprompt/references/goal-meta-prompt-template.md",
+      "sanitized_path": "isaura-goal-metaprompt/references/goal-meta-prompt-template.md",
+      "sha256": "f42ddbfe5b1a8167e15d2555441166a4740676256d79540a84ff33dd50d76183",
+      "modified_time": "2026-05-31T16:15:13.327404+00:00",
+      "size_bytes": 6048,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    },
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/isaura-goal-metaprompt/references/hermes-cortex-ops.md",
+      "sanitized_path": "isaura-goal-metaprompt/references/hermes-cortex-ops.md",
+      "sha256": "ef3f25703974e1d5142025140f2e0ebc54042c0de82c96c5ec66d8e239946e13",
+      "modified_time": "2026-06-01T01:44:27.069219+00:00",
+      "size_bytes": 3946,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    },
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/isaura-goal-metaprompt/references/system-discovery-checklist.md",
+      "sanitized_path": "isaura-goal-metaprompt/references/system-discovery-checklist.md",
+      "sha256": "67558e26480aed00525bac4ded20e117149b176e4814fbc168dedb1d7e974f03",
+      "modified_time": "2026-05-31T21:06:20.377743+00:00",
+      "size_bytes": 2787,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    }
+  ]
+}

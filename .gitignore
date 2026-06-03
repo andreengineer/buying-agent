@@ -1,0 +1,65 @@
+# === NEVER COMMIT — SENSITIVE DATA ===
+.env
+.env.*
+*.env
+*secret*
+*password*
+*token*
+*credential*
+*cookie*
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+known_hosts
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Browser session data
+*.session
+*.cookies
+LocalStorage/
+IndexedDB/
+
+# OAuth / auth tokens
+auth.json
+oauth*.json
+*_token.json
+
+# Raw audio / personal transcripts (sensitive)
+*.mp3
+*.wav
+*.ogg
+*.m4a
+*.aac
+transcripts/raw/
+
+# Local workspace sensitive dirs
+workspace/isaura/.env
+workspace/.env
+isaura-goal-metaprompt/*.env
+
+# Staging area — never committed as-is (use manifests/ instead)
+staging_sanitized/
+
+# Python artifacts
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Node artifacts
+node_modules/
+.npm/
+
+# OS junk
+.DS_Store
+Thumbs.db
+*.swp
+*.swo

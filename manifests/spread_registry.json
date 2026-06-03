@@ -1,0 +1,202 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-06-03",
+  "note": "Model registry for spread(MODE;DEPTH) notation. Hermes selects top-N by rank.",
+
+  "notation": {
+    "format": "spread(MODE;DEPTH)",
+    "modes": {
+      "l": "linear — sequential chain, each step compresses+critiques prior output",
+      "p": "parallel — simultaneous, Opus chairman converges all outputs"
+    },
+    "depth": "integer N = use top-N models from ranked list below"
+  },
+
+  "examples": [
+    { "call": "spread(l;5)", "meaning": "Linear chain, top 5 strongest models" },
+    { "call": "spread(p;4)", "meaning": "Parallel: 4 slots simultaneously, Opus converges" },
+    { "call": "spread(p;2)", "meaning": "Quick parallel: GPT → DeepSeek only" },
+    { "call": "spread(l;3)", "meaning": "Linear: R1 → Gemini → Opus" }
+  ],
+
+  "models": [
+    {
+      "rank": 1,
+      "name": "Claude Opus 4.7",
+      "role": "chairman_only",
+      "mode_compat": ["l_last", "p_converge"],
+      "access": "browser_ui",
+      "ui_url": "claude.ai",
+      "api_available": false,
+      "cost_tier": "sunk",
+      "cost_per_1m_in_usd": 0,
+      "cost_per_1m_out_usd": 0,
+      "env_key": null,
+      "strengths": ["final synthesis", "conflict resolution", "chairman decisions"],
+      "notes": "Always runs last. Never in a parallel slot. Converges all chains."
+    },
+    {
+      "rank": 2,
+      "name": "GPT-5",
+      "role": "generalist",
+      "mode_compat": ["l", "p"],
+      "access": "browser_ui",
+      "ui_url": "chatgpt.com",
+      "api_available": false,
+      "cost_tier": "sunk",
+      "cost_per_1m_in_usd": 0,
+      "cost_per_1m_out_usd": 0,
+      "env_key": null,
+      "strengths": ["architecture", "data lake design", "code generation"],
+      "notes": "Best for architecture + data model slots in parallel."
+    },
+    {
+      "rank": 3,
+      "name": "Gemini 2.5 Pro",
+      "role": "vision_and_deep",
+      "mode_compat": ["l", "p"],
+      "access": "api_and_browser",
+      "ui_url": "gemini.google.com",
+      "api_available": true,
+      "cost_tier": "high",
+      "cost_per_1m_in_usd": 1.25,
+      "cost_per_1m_out_usd": 10.0,
+      "env_key": "GEMINI_KEY",
+      "strengths": ["vision", "image pipeline", "deep technical thinking"],
+      "notes": "Use browser UI first (sunk cost). API only for ROI-justified runs."
+    },
+    {
+      "rank": 4,
+      "name": "DeepSeek R1",
+      "role": "reasoner",
+      "mode_compat": ["l"],
+      "access": "api",
+      "api_available": true,
+      "cost_tier": "medium",
+      "cost_per_1m_in_usd": 0.55,
+      "cost_per_1m_out_usd": 2.19,
+      "env_key": "DEEPSEEK_KEY",
+      "strengths": ["chain-of-thought", "reasoning", "second opinion"],
+      "notes": "Best for linear step 1 (suggest). Heavy thinking, not for quick checks."
+    },
+    {
+      "rank": 5,
+      "name": "Kimi K2",
+      "role": "filter_and_long_context",
+      "mode_compat": ["l", "p"],
+      "access": "api",
+      "api_available": true,
+      "cost_tier": "medium",
+      "cost_per_1m_in_usd": 0.55,
+      "cost_per_1m_out_usd": 2.19,
+      "env_key": "KIMI_KEY",
+      "strengths": ["long context", "noise filtering", "compression"],
+      "notes": "Ideal as compression/filter step in linear chains. Also hermes-cortex default filter."
+    },
+    {
+      "rank": 6,
+      "name": "DeepSeek V3.2",
+      "role": "fast_generalist",
+      "mode_compat": ["l", "p"],
+      "access": "api",
+      "api_available": true,
+      "cost_tier": "low",
+      "cost_per_1m_in_usd": 0.27,
+      "cost_per_1m_out_usd": 0.41,
+      "env_key": "DEEPSEEK_KEY",
+      "strengths": ["fast", "cheap", "good generalizer", "conclude step"],
+      "notes": "Best for conclude step in linear or cheap parallel slot."
+    },
+    {
+      "rank": 7,
+      "name": "Qwen 2.5 72B",
+      "role": "backup_generalist",
+      "mode_compat": ["l", "p"],
+      "access": "api",
+      "api_available": true,
+      "cost_tier": "low",
+      "cost_per_1m_in_usd": 0.40,
+      "cost_per_1m_out_usd": 0.40,
+      "env_key": "QWEN_KEY",
+      "strengths": ["BR perspective", "generalista", "backup"],
+      "notes": "Use when other API models are down or for BR-specific analysis."
+    },
+    {
+      "rank": 8,
+      "name": "Manus",
+      "role": "executor",
+      "mode_compat": ["p"],
+      "access": "browser_ui",
+      "ui_url": "manus.ai",
+      "api_available": false,
+      "cost_tier": "sunk",
+      "cost_per_1m_in_usd": 0,
+      "cost_per_1m_out_usd": 0,
+      "env_key": null,
+      "strengths": ["execution plans", "deploy pipelines", "branch strategy"],
+      "notes": "Parallel only. Best for execution/deploy slot."
+    },
+    {
+      "rank": 9,
+      "name": "Perplexity Pro",
+      "role": "market_research",
+      "mode_compat": ["p"],
+      "access": "browser_ui",
+      "ui_url": "perplexity.ai",
+      "api_available": false,
+      "cost_tier": "sunk",
+      "cost_per_1m_in_usd": 0,
+      "cost_per_1m_out_usd": 0,
+      "env_key": null,
+      "strengths": ["live web search", "market data", "competition", "prices"],
+      "notes": "Parallel only. Use for market/competitor/pricing slots."
+    },
+    {
+      "rank": 10,
+      "name": "Llama 4 Scout (Groq)",
+      "role": "fast_cheap",
+      "mode_compat": ["l", "p"],
+      "access": "api",
+      "api_available": true,
+      "cost_tier": "near_zero",
+      "cost_per_1m_in_usd": 0.11,
+      "cost_per_1m_out_usd": 0.34,
+      "env_key": "GROQ_KEY",
+      "strengths": ["speed", "low cost", "quick sanity checks"],
+      "notes": "Low stakes only. Not for chairman-level decisions."
+    }
+  ],
+
+  "slot_assignment_guide": {
+    "spread_p_4_default": [
+      { "slot": 1, "model": "GPT-5", "role_prompt": "architecture + data model" },
+      { "slot": 2, "model": "Gemini 2.5 Pro", "role_prompt": "technical implementation + visual" },
+      { "slot": 3, "model": "DeepSeek V3.2", "role_prompt": "cost analysis + quick wins" },
+      { "slot": 4, "model": "Perplexity Pro", "role_prompt": "market + competition" }
+    ],
+    "spread_l_3_default": [
+      { "step": 1, "model": "DeepSeek R1", "role": "suggest" },
+      { "step": 2, "model": "Gemini 2.5 Pro", "role": "critique" },
+      { "step": 3, "model": "Claude Opus", "role": "conclude_chairman" }
+    ],
+    "spread_l_5_default": [
+      { "step": 1, "model": "GPT-5", "role": "suggest" },
+      { "step": 2, "model": "Gemini 2.5 Pro", "role": "critique" },
+      { "step": 3, "model": "DeepSeek R1", "role": "reason" },
+      { "step": 4, "model": "Kimi K2", "role": "compress_filter" },
+      { "step": 5, "model": "Claude Opus", "role": "conclude_chairman" }
+    ]
+  },
+
+  "api_spread_policy": {
+    "status": "FUTURE — not default",
+    "activation_conditions": [
+      "Task has measurable, quantified ROI that justifies API cost",
+      "Andre explicitly approves the spend",
+      "All required API keys are present in .env",
+      "Estimated cost calculated and shown before execution"
+    ],
+    "cost_guard": "Abort and ask Andre if estimated cost > $3.00",
+    "current_active_path": "browser_ui_relay (see RUNBOOK_browser_spread.md)"
+  }
+}
