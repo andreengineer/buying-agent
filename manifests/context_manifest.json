@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-06-03T04:14:58.885499+00:00",
+  "generated_at": "2026-06-03T06:44:00.036009+00:00",
   "generated_by": "check_context_integrity.py",
   "repo_root": "/home/a/Desktop/isaura-hermes-context",
-  "total_files": 54,
-  "cloud_safe": 54,
+  "total_files": 55,
+  "cloud_safe": 55,
   "blocked": 0,
   "files": [
     {
@@ -75,6 +75,15 @@
       "sha256": "94bda07c927d096067ebabca6f0cfa76fcaa3fcaf38c317ec7791507f8c000b4",
       "modified_time": "2026-05-03T21:18:09.330367+00:00",
       "size_bytes": 1396,
+      "sensitivity_label": "CLOUD-SAFE",
+      "upload_status": "pending"
+    },
+    {
+      "source_path": "/home/a/Desktop/isaura-hermes-context/staging_sanitized/workspace/WORKSPACE_MAP.md",
+      "sanitized_path": "workspace/WORKSPACE_MAP.md",
+      "sha256": "36d0569b8fdd89dd205930d07f0a0f2f14ee9aaff1f53c5d8105ad0696214ea1",
+      "modified_time": "2026-06-03T06:43:55.051753+00:00",
+      "size_bytes": 2093,
       "sensitivity_label": "CLOUD-SAFE",
       "upload_status": "pending"
     },
