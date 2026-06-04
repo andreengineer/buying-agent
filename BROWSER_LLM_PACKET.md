@@ -71,6 +71,11 @@ CURRENT ACTORS:
 
 SESSION START:
 Read CONTEXT_INDEX.md, confirm you understand the system, then await Andre's instruction.
+
+IF ANDRE TASKS YOU WITH ALPHA VALIDATION:
+  Read `ALPHA-VALIDATION.md` — it contains the complete stack validation protocol
+  Read `PREMIUMUI-ACCESS.md` — it tells you which files to consume and how
+  Run through ALL stages in order. Report blockers as you find them.
 ```
 
 ---

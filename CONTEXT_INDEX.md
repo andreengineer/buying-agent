@@ -11,7 +11,7 @@ It tells you where everything lives and how to consume it.
 |---|---|---|---|---|
 | Hermes | DeepSeek V4-flash + OpenRouter | `goals/`, `board_reports/` | `goals/YYYY-MM-DD_nightly.md` | See `HERMES_README.md` |
 | Claw (OpenClaw) | DeepSeek V4-flash | all files | `board_reports/`, sanitized context | Port 18789. See `CLAW_README.md` |
-| Claude UI | Opus (browser) | this repo via GitHub or paste | board format `.md` artifacts | See `BROWSER_LLM_PACKET.md` |
+| Claude UI | Opus (browser) | this repo via GitHub or paste | board format `.md` artifacts | Reads `ALPHA-VALIDATION.md`, `PREMIUMUI-ACCESS.md` |
 | GPT UI | GPT-5 (browser) | this repo via GitHub or paste | board format `.md` artifacts | See `BROWSER_LLM_PACKET.md` |
 | Perplexity | Pro (browser) | this repo via GitHub | research memos | See `BROWSER_LLM_PACKET.md` |
 | Andre | — | everything | approvals, git via Telegram/cron | CEO, final judgment |
@@ -102,10 +102,12 @@ It tells you where everything lives and how to consume it.
 ## How browser LLMs should consume this context
 
 1. Read `CONTEXT_INDEX.md` (this file) first
-2. Read the relevant section file (`board_reports/`, `goals/`, etc.)
-3. Produce output in board `.md` format
-4. Do NOT request `.env`, raw transcripts, or any local-only data
-5. If a file is missing, ask Andre — do not assume
+2. Read `PREMIUMUI-ACCESS.md` — tells you which files to consume per role
+3. If tasked with alpha validation → read `ALPHA-VALIDATION.md` — complete stack validation protocol
+4. Read the relevant section file (`board_reports/`, `goals/`, etc.)
+5. Produce output in board `.md` format
+6. Do NOT request `.env`, raw transcripts, or any local-only data
+7. If a file is missing, ask Andre — do not assume
 
 **Full packet for pasting into browser:** [`BROWSER_LLM_PACKET.md`](BROWSER_LLM_PACKET.md)
 

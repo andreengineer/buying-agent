@@ -69,7 +69,9 @@ isaura-hermes-context/
 ├── MARCELA_RUNBOOK.md      ← PT-BR step-by-step for Marcela
 ├── HERMES_README.md        ← Hermes agent instructions
 ├── CLAW_README.md          ← Claw / Claude Code instructions
-├── BROWSER_LLM_PACKET.md  ← copy-paste packet for browser LLMs
+├── BROWSER_LLM_PACKET.md   ← copy-paste packet for browser LLMs
+├── PREMIUMUI-ACCESS.md     ← how PremiumUI reads files per role
+├── ALPHA-VALIDATION.md     ← stack validation protocol for alpha launch
 ├── board_reports/          ← sanitized board cycle reports
 ├── goals/                  ← nightly goal outputs
 ├── runbooks/               ← operational procedures
