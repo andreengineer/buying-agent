@@ -3,7 +3,7 @@
 **Canonical shared knowledge base for the Isaura / Hermes / Claw AI orchestration system.**
 
 This repo is the single source of truth for non-sensitive project context.
-Every orchestration actor — Hermes, Claw, Claude UI, GPT UI, Perplexity — reads from here.
+Every orchestration actor — Hermes, Claw, Claude UI, GPT UI, Perplexity, Gemini, DeepSeek, Manus — reads from here.
 
 ---
 
