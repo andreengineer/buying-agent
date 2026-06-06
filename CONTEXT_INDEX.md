@@ -1,7 +1,22 @@
 # CONTEXT_INDEX.md — Orchestration Navigation Map
 
-**This is the first file every actor must read.**
-It tells you where everything lives and how to consume it.
+**LLM entry point:** [`PROMPT_ENTRY.md`](PROMPT_ENTRY.md) — progressive context loading with token budgets.
+**Universal entry:** [`llms.txt`](llms.txt) — one-line-per-file index for any LLM.
+
+**This is the navigation map.** It tells you where everything lives and how to consume it.
+
+---
+
+## Token budget (entire repo)
+
+| Level | Tokens | What fits |
+|---|---|---|
+| 🟢 Minimal | ~800 | Navigation + your role |
+| 🟡 Standard | ~2,500 | Navigation + validation + routing |
+| 🟠 Full | ~5,000 | Everything except manifests + scripts |
+| 🔴 Max | ~8,000 | Entire repo |
+
+**Always start with [`PROMPT_ENTRY.md`](PROMPT_ENTRY.md)** — it tells you exactly which files to read at each tier.
 
 ---
 
@@ -136,4 +151,41 @@ Run `scripts/check_context_integrity.py` to refresh.
 
 ---
 
-_Last updated by: Claw (Claude Code) / auto-generated_
+## Archive (compressed context)
+
+Files older than 14 days are auto-compressed into ~75-token summaries.
+
+- **Archive index:** [`archive/ARCHIVE_INDEX.md`](archive/ARCHIVE_INDEX.md)
+- **Originals preserved:** `archive/raw/<category>/<file>`
+- **Compression tool:** `python3 scripts/compress_context.py`
+- **Preview:** `python3 scripts/compress_context.py --dry-run`
+
+### File sizes (token estimates)
+
+| File | Lines | ~Tokens |
+|---|---|---|
+| `CONTEXT_INDEX.md` | 155 | ~390 |
+| `PROMPT_ENTRY.md` | 100 | ~250 |
+| `llms.txt` | 55 | ~140 |
+| `ALPHA-VALIDATION.md` | 381 | ~950 |
+| `HERMES_README.md` | 196 | ~490 |
+| `CLAW_README.md` | 141 | ~350 |
+| `BROWSER_LLM_PACKET.md` | 94 | ~235 |
+| `PREMIUMUI-ACCESS.md` | 98 | ~245 |
+| `MARCELA_RUNBOOK.md` | 103 | ~260 |
+| `CLOUD_POLICY.md` | 91 | ~230 |
+| `CLAUDE_PROJECT_INIT.md` | 157 | ~390 |
+| `architecture/SPREAD_ARCHITECTURE.md` | 171 | ~430 |
+| `architecture/ROUTING_RULES.md` | 97 | ~240 |
+| `architecture/ACCOUNTABILITY_GOVERNOR.md` | 139 | ~350 |
+| `architecture/ISAURA_SYSTEM_STATE.md` | 106 | ~265 |
+| `goals/2026-06-03_alpha_launch_todo.md` | 84 | ~210 |
+| `runbooks/RUNBOOK_browser_spread.md` | 139 | ~350 |
+| `manifests/spread_registry.json` | 220 | ~550 |
+| `manifests/context_manifest.json` | 504 | ~1,300 |
+
+**Total repo: ~3,400 lines / ~8,000 tokens / 500KB**
+
+---
+
+_Last updated by: Isaura / 2026-06-06_

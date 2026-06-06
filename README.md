@@ -27,7 +27,7 @@ Every orchestration actor — Hermes, Claw, Claude UI, GPT UI, Perplexity, Gemin
 - Scripts for scanning, sanitizing, and syncing local files
 - Manifests with file integrity checksums
 
-**Start reading:** [`CONTEXT_INDEX.md`](CONTEXT_INDEX.md)
+**Start reading:** [`llms.txt`](llms.txt) (universal LLM entry) → [`PROMPT_ENTRY.md`](PROMPT_ENTRY.md) (token-budgeted loading) → [`CONTEXT_INDEX.md`](CONTEXT_INDEX.md) (full navigation)
 
 ---
 
@@ -63,27 +63,36 @@ n8n secrets                          scripts/*.sh / *.py
 
 ```
 isaura-hermes-context/
-├── README.md               ← you are here
-├── CONTEXT_INDEX.md        ← navigation wiki for all actors
-├── CLOUD_POLICY.md         ← what can and cannot be uploaded
-├── MARCELA_RUNBOOK.md      ← PT-BR step-by-step for Marcela
-├── HERMES_README.md        ← Hermes agent instructions
-├── CLAW_README.md          ← Claw / Claude Code instructions
-├── BROWSER_LLM_PACKET.md   ← copy-paste packet for browser LLMs
-├── PREMIUMUI-ACCESS.md     ← how PremiumUI reads files per role
-├── ALPHA-VALIDATION.md     ← stack validation protocol for alpha launch
-├── board_reports/          ← sanitized board cycle reports
-├── goals/                  ← nightly goal outputs
-├── runbooks/               ← operational procedures
-├── architecture/           ← system design docs
-├── manifests/              ← integrity manifests
-│   └── context_manifest.json
-├── scripts/                ← automation scripts
+├── README.md                ← you are here
+├── llms.txt                 ← universal LLM entry point (llmstxt.org standard)
+├── PROMPT_ENTRY.md          ← progressive context loading with token budgets
+├── CONTEXT_INDEX.md         ← navigation map for all actors (now with token budgets)
+├── CLOUD_POLICY.md          ← what can and cannot be uploaded
+├── MARCELA_RUNBOOK.md       ← PT-BR step-by-step for Marcela
+├── HERMES_README.md         ← Hermes agent instructions
+├── CLAW_README.md           ← Claw / Claude Code instructions
+├── BROWSER_LLM_PACKET.md    ← copy-paste packet for browser LLMs
+├── PREMIUMUI-ACCESS.md      ← how PremiumUI reads files per role
+├── ALPHA-VALIDATION.md      ← stack validation protocol for alpha launch
+├── archive/                 ← compressed context (summaries of old files)
+│   ├── ARCHIVE_INDEX.md     ← compressed file index
+│   ├── board_reports/       ← board report summaries
+│   ├── goals/               ← goal summaries
+│   └── raw/                 ← original files (gitignored)
+├── board_reports/           ← sanitized board cycle reports
+├── goals/                   ← nightly goal outputs
+├── runbooks/                ← operational procedures
+├── architecture/            ← system design docs
+├── manifests/               ← integrity manifests
+│   ├── context_manifest.json
+│   └── spread_registry.json
+├── scripts/                 ← automation scripts
+│   ├── compress_context.py  ← NEW: auto-compress old files into summaries
 │   ├── scan_context.sh
 │   ├── sanitize_context.py
 │   ├── check_context_integrity.py
 │   └── sync_to_context_repo.sh
-└── staging_sanitized/      ← local only, gitignored
+└── staging_sanitized/       ← local only, gitignored
 ```
 
 ---

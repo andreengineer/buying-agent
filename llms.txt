@@ -1,0 +1,54 @@
+# Isaura / Hermes / Claw — AI Orchestration System
+
+> Procurement copilot building in alpha phase. Multi-agent system with DeepSeek, Claude Opus, GPT-5, and local execution.
+
+## Core files (read in order)
+
+- [CONTEXT_INDEX.md](CONTEXT_INDEX.md) — Navigation map. Read first. ~350 tokens.
+- [PROMPT_ENTRY.md](PROMPT_ENTRY.md) — Progressive context loading with token budgets. ~250 tokens.
+- [ALPHA-VALIDATION.md](ALPHA-VALIDATION.md) — Stack validation protocol for alpha launch. ~950 tokens.
+- [PREMIUMUI-ACCESS.md](PREMIUMUI-ACCESS.md) — Access modes per LLM role. ~250 tokens.
+
+## Agent instructions
+
+- [HERMES_README.md](HERMES_README.md) — Chairman/nightly goal generator. ~500 tokens.
+- [CLAW_README.md](CLAW_README.md) — Execution CTO (OpenClaw gateway). ~350 tokens.
+- [BROWSER_LLM_PACKET.md](BROWSER_LLM_PACKET.md) — Copy-paste session init for browser LLMs. ~250 tokens.
+- [MARCELA_RUNBOOK.md](MARCELA_RUNBOOK.md) — PT-BR step-by-step for human relay. ~250 tokens.
+- [CLOUD_POLICY.md](CLOUD_POLICY.md) — Security policy for what goes in this repo. ~250 tokens.
+
+## Architecture
+
+- [architecture/SPREAD_ARCHITECTURE.md](architecture/SPREAD_ARCHITECTURE.md) — Multi-model parallel orchestration. ~450 tokens.
+- [architecture/ROUTING_RULES.md](architecture/ROUTING_RULES.md) — Model routing and cost governance. ~250 tokens.
+- [architecture/ACCOUNTABILITY_GOVERNOR.md](architecture/ACCOUNTABILITY_GOVERNOR.md) — Anti-escapism and enforcement. ~350 tokens.
+- [architecture/ISAURA_SYSTEM_STATE.md](architecture/ISAURA_SYSTEM_STATE.md) — Current system state and active services. ~250 tokens.
+
+## Goals
+
+- [goals/2026-06-03_alpha_launch_todo.md](goals/2026-06-03_alpha_launch_todo.md) — Active alpha launch TODO. ~200 tokens.
+
+## Manifests
+
+- [manifests/spread_registry.json](manifests/spread_registry.json) — Model ranking and slot assignments. ~550 tokens.
+- [manifests/context_manifest.json](manifests/context_manifest.json) — File integrity checksums. ~1300 tokens.
+
+## Runbooks
+
+- [runbooks/RUNBOOK_browser_spread.md](runbooks/RUNBOOK_browser_spread.md) — Browser relay procedure for multi-model spreads. ~350 tokens.
+
+## Archive (compressed)
+
+- [archive/](archive/) — Older context files compressed into summary form. Check `archive/ARCHIVE_INDEX.md`.
+
+## Scripts
+
+- `scripts/sanitize_context.py` — Sanitizes local files for repo upload.
+- `scripts/check_context_integrity.py` — Refreshes integrity manifest.
+- `scripts/scan_context.sh` — Scans for sensitive data leaks.
+- `scripts/compress_context.py` — Compresses old context files into summaries.
+- `scripts/sync_to_context_repo.sh` — Syncs to GitHub.
+
+---
+
+*Total repo: ~3,400 lines / ~500KB. Entire context fits in most LLM windows.*

@@ -16,7 +16,7 @@ If the browser LLM can open URLs (most can):
 3. Read directly — you have full repo access
 ```
 
-**Starting point:** `CONTEXT_INDEX.md` — the navigation map
+**Starting point:** `llms.txt` (universal entry) → `PROMPT_ENTRY.md` (token-budgeted loading) → `CONTEXT_INDEX.md` (full navigation)
 
 ### Mode B — Raw file URLs (ideal for copy-paste)
 
