@@ -33,6 +33,12 @@
 - [manifests/spread_registry.json](manifests/spread_registry.json) — Model ranking and slot assignments. ~550 tokens.
 - [manifests/context_manifest.json](manifests/context_manifest.json) — File integrity checksums. ~1300 tokens.
 
+## Tokenomics
+
+- [tokenomics/INDEX.md](tokenomics/INDEX.md) — Central registry: budgets, costs, allocation rules. ~100 tokens.
+- [tokenomics/CURRENT.json](tokenomics/CURRENT.json) — Live allocation per agent/model. ~150 tokens.
+- [tokenomics/history/](tokenomics/history/) — Archived snapshots when budget changes.
+
 ## Runbooks
 
 - [runbooks/RUNBOOK_browser_spread.md](runbooks/RUNBOOK_browser_spread.md) — Browser relay procedure for multi-model spreads. ~350 tokens.

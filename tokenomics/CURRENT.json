@@ -1,0 +1,66 @@
+{
+  "_schema": "tokenomics-v1",
+  "_desc": "Live token budget allocation. Any LLM reads its budget here before making calls.",
+
+  "version": 1,
+  "created_at": "2026-06-06T09:23:00Z",
+  "updated_at": "2026-06-06T09:23:00Z",
+
+  "monthly_fixed": {
+    "amount_usd": 22,
+    "description": "UI subscriptions + base API costs",
+    "headroom_usd": 200,
+    "headroom_rule": "Only spent if ROI proven by beta testers"
+  },
+
+  "per_model": [
+    {
+      "model": "deepseek-v4-pro",
+      "role": "primary (Orquestrador)",
+      "provider": "OpenRouter",
+      "input_per_1m": 0.50,
+      "output_per_1m": 2.00,
+      "daily_spend_avg_usd": null,
+      "cap_usd_month": null
+    },
+    {
+      "model": "deepseek-v4-flash",
+      "role": "delegation (Hermes subagents)",
+      "provider": "OpenRouter",
+      "input_per_1m": 0.15,
+      "output_per_1m": 0.60,
+      "daily_spend_avg_usd": 0.0075,
+      "cap_usd_month": null
+    },
+    {
+      "model": "gpt-5-5",
+      "role": "brain (ChatGPT browser)",
+      "provider": "ChatGPT Plus (browser only)",
+      "input_per_1m": null,
+      "output_per_1m": null,
+      "daily_spend_avg_usd": 20.00,
+      "cap_usd_month": "fixed sub"
+    },
+    {
+      "model": "claude-opus-4.7",
+      "role": "cerebro (Claude.ai browser)",
+      "provider": "Claude Pro (browser only)",
+      "input_per_1m": null,
+      "output_per_1m": null,
+      "daily_spend_avg_usd": 20.00,
+      "cap_usd_month": "fixed sub",
+      "note": "No API access until 2026-07-26"
+    }
+  ],
+
+  "context_allocation": {
+    "cerebro_opus": "2KB curated context. 1 decision per morning turn.",
+    "orquestrador_hermes": "Full session context. DeepSeek V4-pro main, flash for delegation.",
+    "braco_claw": "Single-task context. Playwright execution only.",
+    "isaura": "~$0.0075/day via V4-flash. Express server context.",
+    "gpt5_chatgpt": "Full browser context. Afternoon execution. No API key."
+  },
+
+  "_history": [],
+  "_next": "v2 — allocate by metric, not by seat"
+}
