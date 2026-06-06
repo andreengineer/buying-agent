@@ -46,8 +46,16 @@
 - `scripts/sanitize_context.py` — Sanitizes local files for repo upload.
 - `scripts/check_context_integrity.py` — Refreshes integrity manifest.
 - `scripts/scan_context.sh` — Scans for sensitive data leaks.
-- `scripts/compress_context.py` — Compresses old context files into summaries.
-- `scripts/sync_to_context_repo.sh` — Syncs to GitHub.
+- `scripts/compress_context.py` — Compresses old context into summaries.
+- `scripts/sync_to_context.sh` — Syncs to GitHub.
+
+## Agent Workspace (LLM-to-LLM layer)
+
+- [AGENT_WORKSPACE.md](AGENT_WORKSPACE.md) — Conventions for any LLM to read/write structured data here. ~300 tokens.
+
+## Reviews
+
+- [reviews/isaura-pre-alpha-v1.json](reviews/isaura-pre-alpha-v1.json) — Pre-alpha critique & suggestions (v1). LLM-agnostic, versioned.
 
 ---
 

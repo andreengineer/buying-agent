@@ -1,0 +1,232 @@
+{
+  "_schema": "isaura-review-v1",
+  "_desc": "Critiques and suggestions for Isaura (buying-agent). LLM-agnostic — no model/provider names. Any LLM can read, update, or version this file.",
+  "_format_rules": [
+    "LLM names never appear — judge by merit, not origin.",
+    "Each review is a self-contained block; merge/version by updating items + bumping version.",
+    "vN increments per sprint/pivot; superseded reviews archived to reviews/archive/.",
+    "All decisions align with Cérebro (Claude Opus) rulings.",
+    "Any LLM can edit this file via git commit + push. See AGENT_WORKSPACE.md."
+  ],
+
+  "version": 1,
+  "created_at": "2026-06-05T15:40:35Z",
+  "updated_at": "2026-06-05T15:40:42Z",
+  "review_type": "pre-alpha-critique",
+
+  "source_a": {
+    "origin": "chat-share",
+    "title": "Próximas implementações alpha",
+    "created_at": "2026-06-05T15:40:35Z",
+    "trigger": "Request: suggest next implementations before alpha launch",
+    "context_file": "CLAUDE_PROJECT_INIT.md"
+  },
+
+  "source_b": {
+    "origin": "search-critique",
+    "title": "Diagnóstico: o que trava o alpha",
+    "created_at": "2026-06-05T~15:45Z",
+    "trigger": "Codebase review: buying-agent repo status",
+    "context_file": "GitHub repo buying-agent"
+  },
+
+  "sections": [
+    {
+      "id": "blockers",
+      "label": "SHIP BLOCKERS (P0)",
+      "priority": "P0 — unblock first real user",
+      "items": [
+        {
+          "id": "B1",
+          "summary": "RESEND_API_KEY missing — email silent",
+          "detail": "Resend free tier (3k/mo). Steps: create account → Add Domain → izzza.app → DKIM → copy key to .env.",
+          "cost": "Free",
+          "time": "10 min",
+          "depends_on": "Domain izzza.app (B2)"
+        },
+        {
+          "id": "B2",
+          "summary": "Domain izzza.app not bought — webhook has no public endpoint",
+          "detail": "Without domain, Evolution API webhook has no public target. Buy via Cloudflare Registrar (~R$30/yr). DNS A record → server IP.",
+          "cost": "~R$30/yr",
+          "time": "30 min",
+          "depends_on": null
+        },
+        {
+          "id": "B3",
+          "summary": "Z-API not tested with SIM Claro — risk of R$89/mo wasted",
+          "detail": "Free trial first. Connect SIM Claro, test webhook POST SERVER_IP:3099/webhook/whatsapp. Only pay after validation.",
+          "cost": "Free trial → R$89/mo",
+          "time": "1h",
+          "depends_on": "Domain izzza.app (B2)"
+        },
+        {
+          "id": "B4",
+          "summary": "Database NOT configured — no persistence",
+          "detail": "Local SQLite (free, 3 tables: users, requests, cache). No order history, no vision cache. Minimal schema to run.",
+          "cost": "Free (SQLite)",
+          "time": "2h",
+          "depends_on": null
+        }
+      ]
+    },
+    {
+      "id": "bugs",
+      "label": "BUGS READY TO FIX (no external blocker)",
+      "priority": "P1",
+      "items": [
+        {
+          "id": "F1",
+          "summary": "image-pipeline.ts: Cloudinary transform w_50 → w_800",
+          "detail": "Product comparison images arrive as 50px thumbnails. 1-line patch: change `w_50` to `w_800` in Cloudinary transform param.",
+          "file": "image-pipeline.ts",
+          "time": "2 min"
+        }
+      ]
+    },
+    {
+      "id": "implement-now",
+      "label": "IMPLEMENT NOW (no external dependency)",
+      "priority": "P1",
+      "items": [
+        {
+          "id": "I1",
+          "summary": "SQLite cache for Gemini Vision descriptions",
+          "detail": "Cache image descriptions by hash to avoid double-paying Gemini Vision. Table: vision_cache(image_hash, description, created_at).",
+          "time": "1h"
+        },
+        {
+          "id": "I2",
+          "summary": "/health endpoint",
+          "detail": "GET /health returning status of: WhatsApp (Evolution API), Gemini, Cloudinary, Resend (email). Essential for monitoring.",
+          "time": "30 min"
+        },
+        {
+          "id": "I3",
+          "summary": "PM2 restart + smoke test script",
+          "detail": "Post-.env script that restarts Isaura and runs smoke test (ping /health, send test WhatsApp). Usage: `npm run smoke`.",
+          "time": "30 min"
+        }
+      ]
+    },
+    {
+      "id": "alpha-survival",
+      "label": "ALPHA SURVIVAL KIT",
+      "priority": "P1 — don't crash with first user",
+      "items": [
+        {
+          "id": "S1",
+          "summary": "Per-request log",
+          "detail": "SQLite table request_log: timestamp, phone, input_type, intent, latency_ms, success(bool), error. Essential for blind debugging.",
+          "time": "1h"
+        },
+        {
+          "id": "S2",
+          "summary": "Fallback on Gemini/Cloudinary failure",
+          "detail": "If external service fails, respond: \"Recebi. Vou analisar manualmente e já te retorno.\" — never silence, never crash.",
+          "time": "15 min"
+        },
+        {
+          "id": "S3",
+          "summary": "Hard 25s timeout",
+          "detail": "Timeout on entire WhatsApp-response pipeline. Alpha criterion: <30s total. 25s leaves 5s margin.",
+          "time": "20 min"
+        },
+        {
+          "id": "S4",
+          "summary": "Crash guard: error → WhatsApp response + log, never kill process",
+          "detail": "try/catch at entrypoint: any exception becomes friendly WhatsApp response + structured log. Process never dies.",
+          "time": "30 min"
+        }
+      ]
+    },
+    {
+      "id": "ux",
+      "label": "GOVERNA NTA-FIRST UX",
+      "priority": "P1",
+      "items": [
+        {
+          "id": "U1",
+          "summary": "3 commands only: search, photo, summary",
+          "detail": "\"pesquisar [item]\" → search & compare. Send photo → Gemini analysis. \"resumo\" → conversation digest. No menus, short onboarding.",
+          "time": "—"
+        },
+        {
+          "id": "U2",
+          "summary": "Short WhatsApp reply first; PDF/comparison after",
+          "detail": "First response is direct WhatsApp text. Detailed PDF only on request. First-response latency is the metric.",
+          "time": "—"
+        }
+      ]
+    },
+    {
+      "id": "dont-implement",
+      "label": "DON'T IMPLEMENT YET (post-alpha)",
+      "priority": "P99 — feature creep",
+      "items": [
+        {"id": "N1", "summary": "Complex DB (PostgreSQL/Mongo)", "detail": "SQLite handles alpha. Migrate later."},
+        {"id": "N2", "summary": "Multi-model spread via API", "detail": "Fixed cost $22/mo. Spread only when beta validates ROI."},
+        {"id": "N3", "summary": "CRM", "detail": "Zero need for 1 user."},
+        {"id": "N4", "summary": "Web dashboard", "detail": "Governanta uses WhatsApp. Dashboard is distraction."},
+        {"id": "N5", "summary": "Sophisticated n8n automation", "detail": "n8n :5678 runs already. Complex workflows later."},
+        {"id": "N6", "summary": "Enterprise security", "detail": "Basic auth suffices. OWASP audit post-alpha."},
+        {"id": "N7", "summary": "docker-compose.yml in repo", "detail": "Reproducibility goal, not alpha blocker. Commit after."}
+      ]
+    },
+    {
+      "id": "structural-critique",
+      "label": "STRUCTURAL CRITIQUE",
+      "priority": "P2 — medium term",
+      "items": [
+        {
+          "id": "C1",
+          "summary": "Repo is docs-only — zero source code committed",
+          "detail": "No .ts, no package.json, no src/ on GitHub. Real code at /home/a/Desktop/workspace/isaura (local, unversioned). If server dies, product dies with it.",
+          "fix": "Claw: cp -r src/ package.json tsconfig.json ./isaura/ && git add . && git commit"
+        },
+        {
+          "id": "C2",
+          "summary": "goals/2026-06-03_alpha_launch_todo.md referenced but not committed",
+          "detail": "Hermes references a goals file that doesn't exist in the repo. Index inconsistency.",
+          "fix": "Commit or remove the reference."
+        },
+        {
+          "id": "C3",
+          "summary": "No docker-compose.yml in repo — zero reproducibility",
+          "detail": "Evolution API, n8n run in Docker with no committed IaC. Another dev/machine can't reproduce.",
+          "fix": "docker-compose.yml with Evolution API + n8n + Redis + app."
+        },
+        {
+          "id": "C4",
+          "summary": "No automated health check",
+          "detail": "Port 3099 can go down silently. No heartbeat, no alert.",
+          "fix": "Hermes cron: GET /health every 5 min, alert if != 200."
+        }
+      ]
+    }
+  ],
+
+  "priority_execution_plan": [
+    {"step": 1, "action": "Buy domain izzza.app (Cloudflare Registrar)"},
+    {"step": 2, "action": "Configure Resend + DKIM + RESEND_API_KEY in .env", "depends_on": "step 1"},
+    {"step": 3, "action": "Test Z-API trial with SIM Claro + webhook", "depends_on": "step 1"},
+    {"step": 4, "action": "Patch image-pipeline.ts w_50 → w_800"},
+    {"step": 5, "action": "SQLite schema (users, requests, cache, vision_cache)"},
+    {"step": 6, "action": "Add /health endpoint + request_log table"},
+    {"step": 7, "action": "Add 25s timeout + crash guard + fallback text"},
+    {"step": 8, "action": "PM2 restart + smoke test script", "depends_on": "steps 1-7"},
+    {"step": 9, "action": "Real smoke test: WhatsApp → response <30s", "depends_on": "step 8"},
+    {"step": 10, "action": "24h stability: zero crash, logs written, health ok", "depends_on": "step 9"}
+  ],
+
+  "success_criteria": [
+    "Governanta sends WhatsApp → Isaura responds in <30s",
+    "Zero crash in 24h (PM2 restart + health check)",
+    "Confirmation email arrives (Resend configured + DKIM)",
+    "Request logs being written (request_log table)",
+    "Timeout → friendly fallback, never crash"
+  ],
+
+  "_archive": [],
+  "_next": "v2 — next sprint or pivot"
+}
