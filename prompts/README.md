@@ -1,13 +1,12 @@
 # prompts/
 >
-> Prompts prontos pra copiar-colar em cada etapa do workflow mobile.
-> Cada arquivo é auto-contido: abre a URL raw, copia tudo, cola no destino.
-> Nenhum precisa de contexto adicional além do que está escrito.
+> Cada prompt = 1 arquivo .md. Copia tudo → cola no destino.
+> Sempre URL raw do GitHub. Zero zip. Zero extração.
 
 ## Índice
 
-| Arquivo | Destino | Tamanho | Status |
-|---------|---------|---------|--------|
-| `perplexity-valuation-engine.md` | Perplexity Pro (deep research) | ~6.7KB | ✅ Pronto |
-| `scrapling-fable5-prompt.md` | GPT 5.5 ext thinking → Fable 5 | ~2KB | 🟡 Esboço |
-| `valuation-engine-gpt55-brief.md` | GPT 5.5 ext thinking | — | ⬜ A gerar após Perplexity |
+| Arquivo | Destino | Status |
+|---------|---------|--------|
+| `perplexity-valuation-engine.md` | Perplexity Pro (deep research) | ✅ Pronto |
+| `scrapling-analysis.md` | Referência (leitura) | ✅ Pronto |
+| `gpt55-brief.md` | GPT 5.5 ext thinking → gera prompt Fable 5 | ⬜ A gerar após Perplexity |
