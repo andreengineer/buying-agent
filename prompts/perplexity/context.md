@@ -1,53 +1,69 @@
-# Context — Isaura Project
+# Context — Harem Marketplace Platform
 
-## What is Isaura
+## The Client
 
-Isaura is a **UHNW purchasing concierge** that answers "Vale Esse Preço?" (Is it worth this price?) — curatorship of price-to-value for luxury goods. NOT price comparison (Buscapé/Zoom).
+**Elisangela Meira Andrade** — empresária do setor de entretenimento adulto no Espírito Santo.
 
-Target customers: UHNW individuals who value time over savings. They want to know if a product's quality, status, craftsmanship, provenance, and market positioning justify its asking price.
+### Empresas
 
-## Current State
+| Empresa | CNPJ | Fundação | Atividade |
+|---------|------|----------|-----------|
+| Pousada Ragazza LTDA (Ragazza) | 30.312.740/0001-24 | Fev/2021 | Pousada |
+| Harem Cafe Entretenimento LTDA (Harem Cafe) | 64.533.711/0001-04 | Jan/2026 | Cafe/entretenimento adulto |
+| Aurora Producoes Privadas LTDA (Maison Privee) | 64.353.970/0001-53 | Jan/2026 | Producao/conteudo privado |
+
+### Current Operations (Harem Cafe)
 
 | Aspect | Detail |
 |--------|--------|
-| MVP category | Premium wine (Brazilian market) |
-| Tech stack | Node/TypeScript, Express (:3099), Playwright (Claw), Tavily API |
-| Data pipeline | Tavily search → price comparison → WhatsApp delivery (Evolution API) |
-| KNOWN_STORES | 41 Brazilian wine stores configured |
-| Tests | 180/180 PASS, TypeScript clean |
-| Budget | $22/month APIs, $200 headroom |
-| Runtime | Linux, PM2, Docker (Evolution API, n8n) |
+| Location | Vitória, ES |
+| Ad spend | U$8k/month **exclusively on marketplaces** (Ilha do Prazer is primary) |
+| Professional pricing | Min U$100/hour |
+| ICP profile | Buys luxury beverages, stays 24h+, budget U$1-4k |
+| Business model | Marketplace ads → brings clients to physical venue |
 
-## Pipeline Flow
+## The Opportunity
 
-```
-User: "Vale esse preço?" 
-  → Tavily search product + price + reviews
-  → scrape product images (rate-limited: 3/run)
-  → compare across known stores
-  → generate valuation report
-  → deliver via Telegram/WhatsApp
-```
+Elisangela wants to build her **own marketplace platform** serving multiple adult entertainment venues ("casas de entretenimento adulto").
 
-## Known Constraints
+**Why she can win:**
+1. She already spends U$8k/mo on competitor marketplaces — knows the model intimately
+2. She has her own CRM with professional contacts
+3. She can replicate/improve the best assets from existing marketplaces
+4. She understands the ICP (luxury buyer, U$1-4k budget)
+5. U$40k budget to build
 
-- **No Claude API** — Claude (Fable 5) only via browser (claude.ai)
-- **No GPT API** — only via browser (chatgpt.com)
-- **No vector DB** — no PostgreSQL available for Isaura data
-- **Tavily rate-limit** — 3 image searches per pipeline run (race condition P0)
-- **premium_ui_broker** — broken for 13 days ($60/mo sunk)
-- **Mobile-first** — CEO operates 80% from Android phone
+**Value prop for venues:** "Our platform brings you qualified leads"
+**Value prop for professionals:** "Best place to acquire high-spending clients"
 
-## Fable 5 Sprint
+## Market Context
 
-| Metric | Value |
-|--------|-------|
-| Model | Claude Fable 5 (Mythos-class) |
-| Cost | $10/$50 per M tokens |
-| Limits remaining | ~9% (resets Sat 8am) |
-| First run | Aircraft PoC (10h, 27k ctx) |
-| GPT 5.5 free window | +11 days |
+Marketplaces in this space handle:
+- Professional profiles with photos/videos (assets)
+- Scheduling/booking
+- Ratings and reviews
+- Location-based search
+- Payment processing
 
-## What We Need From This Research
+## Competition
 
-The core IP of Isaura is the **valuation engine** — the logic that determines "is this worth the price?" This research will feed into GPT 5.5 extended thinking, which will generate the prompt for Fable 5 to design the engine.
+| Platform | Type | Notes |
+|----------|------|-------|
+| Ilha do Prazer | Adult marketplace | Main competitor — E.S. focused |
+| Privacy | Content subscription (OnlyFans-style) | Different model (digital content) |
+| Skooka | Adult marketplace | Competitor |
+| Meu Patrocinio | Sugar dating | Adjacent market |
+| OnlyFans | Content subscription | International, BR presence |
+
+## Budget & Timeline
+
+| Item | Value |
+|------|-------|
+| Total budget | U$40,000 |
+| Monthly ad spend (current) | U$8,000 — could redirect to own platform |
+| Development | Full platform (marketplace + booking + sexshop/gifts + gamification) |
+
+## Tech Implications
+
+- Platform needs: user profiles, venue profiles, professional profiles, scheduling, payments, messaging, reviews, e-commerce (sexshop/gifts), gamification system
+- Could use: Node.js (existing Isaura stack), Playwright for scraping competitor assets

@@ -1,30 +1,28 @@
-# Perplexity Pro Deep Research — Isaura Valuation Engine
+# README.md — Perplexity Pro Deep Research: Adult Entertainment Marketplace Brasil
 
 > **You are Perplexity Pro with Deep Research enabled.**
-> Your goal is to research how to build an AI system that answers "is this product worth its price?" for UHNW individuals purchasing luxury goods.
+> Your goal is to research the Brazilian adult entertainment marketplace industry for a new platform being built with a U$40k budget.
 
 ## Files in this directory
 
 | File | Purpose |
 |------|---------|
-| `context.md` | Background: what Isaura is, why it exists, constraints |
-| `research_questions.md` | 7 research axes — answer ALL in depth |
+| `context.md` | Background: the client, business model, existing competitors |
+| `research_questions.md` | Research axes — answer ALL in depth |
 
 ## Instructions
 
-1. Read `context.md` first — understand the project
-2. Read `research_questions.md` — these are the questions to investigate
-3. Research in English AND Portuguese (Brazilian market)
-4. Return structured markdown with:
+1. Read `context.md` first — understand the business and the opportunity
+2. Read `research_questions.md` — investigate each question thoroughly
+3. Research in Portuguese AND English (Brazilian market focus)
+4. Return structured markdown:
    - Executive Summary (top 5 insights)
    - Detailed findings per research question
-   - Data source inventory (source, category, accessibility, reliability 1-5)
-   - Competitive matrix
-   - Implementation recommendations
-5. **Cite ALL sources with URLs.** If insufficient data, say so.
+   - Competitive analysis matrix
+   - Feature recommendations
+   - Pricing/compliance considerations
+5. **Cite ALL sources with URLs**
 
-## Output format
+## Output
 
-Single structured markdown document. No zip, no multiple files. Just comprehensive research.
-
-**Begin research.**
+Single structured markdown document. No zip, no multiple files.
