@@ -5,7 +5,6 @@
 *secret*
 *password*
 *token*
-!tokenomics/
 *credential*
 *cookie*
 *.pem
@@ -47,9 +46,6 @@ isaura-goal-metaprompt/*.env
 
 # Staging area — never committed as-is (use manifests/ instead)
 staging_sanitized/
-
-# Raw archive originals — preserved locally, summaries in archive/*.md
-archive/raw/
 
 # Python artifacts
 __pycache__/

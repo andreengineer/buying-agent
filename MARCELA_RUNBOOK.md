@@ -1,75 +1,91 @@
-# MARCELA_RUNBOOK.md
+# MARCELA_RUNBOOK.md (v2 — Mobile-First)
 
 **Para Marcela. Leia devagar. Siga exatamente.**
+
+> Atualizado 2026-06-11: Agora com URLs raw do GitHub — tudo acessível do celular.
 
 ---
 
 ## O que é isso
 
-Este arquivo é seu manual de operação.
-Você é o correio entre o André e os sistemas de IA.
+Você é o **correio** entre o André e os sistemas de IA.
 Você **transporta pacotes**. Você **não interpreta**, **não decide**, **não improvisa**.
+Não "melhore" o texto. Copie exato. Cole exato.
 
 ---
 
-## Regras básicas
+## Fluxo Principal (Mobile — 80% do tempo)
 
-1. **Copie exatamente.** Não corrija ortografia. Não resuma. Copie tudo.
-2. **Cole exatamente.** No lugar certo, indicado abaixo.
-3. **Devolva exatamente.** O que a IA responder, copie e mande pro André.
-4. **Não decida nada.** Se tiver dúvida, pare e pergunte ao André.
-5. **Nunca mande arquivo .env, senha, ou chave de API pra lugar nenhum.**
+Cada etapa é: **abrir URL → copiar tudo → colar no destino → copiar resposta → mandar pro André.**
+
+### Etapa 1 — Área de Trabalho
+
+Quando o André falar **"roteiro"** ou **"pipeline"**:
+
+1. Abra este link: **https://raw.githubusercontent.com/andreengineer/buying-agent/main/MOBILE_WORKFLOW.md**
+2. Leia qual etapa ele pediu
+3. Siga as instruções de lá
+
+### Etapa 2 — Perplexity (pesquisa profunda)
+
+Quando o André falar **"Perplexity"**:
+
+1. Abra: **https://raw.githubusercontent.com/andreengineer/buying-agent/main/prompts/perplexity-valuation-engine.md**
+2. Copie o texto inteiro (select all → copy)
+3. Abra **perplexity.ai** no navegador
+4. Cole na caixa de texto
+5. Selecione **"Deep Research"**
+6. Clique em enviar
+7. Aguarde a resposta (~5-10 minutos)
+8. Copie a resposta inteira
+9. Mande pro André pelo WhatsApp ou Telegram
+
+### Etapa 3 — ChatGPT (GPT 5.5)
+
+Quando o André falar **"GPT"** ou **"5.5"**:
+
+1. O André vai te mandar um link raw
+2. Abra o link → copie tudo
+3. Abra **chatgpt.com**
+4. Selecione GPT 5.5 com **"extended thinking"** ativado
+5. Cole o texto → envie
+6. Depois que responder, digite:
+   "Generate a .zip file with separate .MD files for the Fable 5 prompt pack"
+7. Baixe o .zip que ele gerar
+8. Salve no Google Drive (pasta do projeto)
+9. Avise o André
+
+### Etapa 4 — Claude (Fable 5)
+
+Quando o André falar **"Fable"**:
+
+1. Abra o .zip que o GPT gerou
+2. Extraia os arquivos
+3. Abra **claude.ai**
+4. Crie um **NOVO PROJETO** (não use o anterior)
+5. Nas instruções do projeto, escreva exatamente o que o André mandar
+6. Abra o arquivo **00_FABLE_MAIN_PROMPT.md**
+7. Copie tudo
+8. Cole como primeira mensagem no Claude
+9. Aguarde a resposta (~5-10 minutos)
+10. Copie a resposta e mande pro André
 
 ---
 
-## Tarefa 1 — Levar contexto do projeto para o Claude
+## Tarefas Avulsas
 
-### Passo 1
-Abra o site: **claude.ai**
+### Acessar arquivo no GitHub
+1. O André vai te mandar um link começando com `https://raw.githubusercontent.com/...`
+2. Abra o link
+3. Copie o conteúdo
+4. Cole onde o André pedir
 
-### Passo 2
-Abra o arquivo abaixo e copie o conteúdo inteiro:
-```
-[André vai te dar o link ou o texto do BROWSER_LLM_PACKET.md]
-```
-
-### Passo 3
-Cole na caixa de texto do Claude e aperte Enter.
-
-### Passo 4
-Quando o Claude responder, copie a resposta inteira e mande pro André pelo WhatsApp ou onde ele pedir.
-
----
-
-## Tarefa 2 — Levar resposta do Claude para o Hermes
-
-### Passo 1
-Você vai receber um texto do André (ou diretamente do Claude).
-
-### Passo 2
-Abra o terminal (aquele programa preto).
-
-### Passo 3
-O André vai te dizer o comando. Cole exatamente como ele mandou. Aperte Enter.
-
-### Passo 4
-Copie tudo que aparecer na tela preta e mande pro André.
-
----
-
-## Tarefa 3 — Acessar o repositório no GitHub
-
-### Passo 1
-Abra o site: **github.com**
-
-### Passo 2
-O André vai te mandar o link do repositório. Cole no navegador.
-
-### Passo 3
-Clique no arquivo que o André pedir (ex: `CONTEXT_INDEX.md`).
-
-### Passo 4
-Copie o conteúdo e cole onde o André pedir.
+### Subir arquivo no Google Drive
+1. Abra drive.google.com
+2. Navegue até a pasta do projeto (André manda o link)
+3. Clique em "Novo" → "Upload de arquivo"
+4. Selecione o arquivo baixado
+5. Avise o André
 
 ---
 
@@ -80,12 +96,14 @@ Copie o conteúdo e cole onde o André pedir.
 - ❌ Não "melhore" o texto — copie exato
 - ❌ Não tome decisão se a IA pedir algo que parece errado
 - ❌ Não instale nada no computador por conta própria
+- ❌ Não responda perguntas da IA como se fosse o André
+- ❌ Não crie conta em site nenhum
 
 ---
 
 ## Se der errado
 
-Pare tudo. Mande pro André exatamente o que apareceu na tela.
+Pare tudo. Mande pro André **exatamente o que apareceu na tela** (print ou texto).
 Não tente resolver. Não tente de novo. Espere instrução.
 
 ---
@@ -93,11 +111,26 @@ Não tente resolver. Não tente de novo. Espere instrução.
 ## Resumo
 
 ```
-RECEBEU texto?  →  COPIOU exato?  →  COLOU no lugar certo?  →  DEVOLVEU resposta?
-     ↓                  ↓                    ↓                        ↓
-   SIM              SIM SEMPRE           SIM SEMPRE              SIM COMPLETO
+ANDRÉ DISSE "roteiro"?
+  → Abre MOBILE_WORKFLOW.md
+  → Segue instrução da etapa
+
+ANDRÉ DISSE "Perplexity"?
+  → Abre URL → copia → cola → resposta → manda pro André
+
+ANDRÉ DISSE "GPT" ou "5.5"?
+  → Abre URL → copia → cola → pede .zip → salva → avisa
+
+ANDRÉ DISSE "Fable"?
+  → Extrai .zip → cria projeto → cola 00_...md → resposta → manda
+
+ANDRÉ MANDOU LINK?
+  → Abre → copia → cola onde ele disse
+
+DUVIDOU?
+  → Pergunta pro André. Não decide.
 ```
 
 ---
 
-_Documento aprovado por Andre (CEO). Qualquer dúvida, pergunte ao André._
+*Aprovado por Andre (CEO). Qualquer dúvida, pergunte ao André.*
