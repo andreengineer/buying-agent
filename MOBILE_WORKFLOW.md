@@ -1,64 +1,55 @@
 # MOBILE_WORKFLOW.md — Pipeline Harem Marketplace
 
-> Projeto: Elisangela (U$40k) — Marketplace entretenimento adulto ES.
-> Cada estágio = **1 URL** → copia tudo → cola no destino.
-
----
-
-## Pipeline
-
-```
-Hermes → Perplexity → Hermes/DeepSeek → GPT 5.5 → Fable 5
-```
+> **i7 MODE.** 80% lead gen. Inovar, não cortar custo.
+> Cada estágio = **1 URL** → copia tudo → cola.
 
 ---
 
 ## ① Perplexity Pro (deep research)
 
-**URL pra copiar:** https://raw.githubusercontent.com/andreengineer/buying-agent/main/prompts/mobile-pack/harem-marketplace-perplexity-prompt.md
+**URL:** `https://raw.githubusercontent.com/andreengineer/buying-agent/main/prompts/mobile-pack/harem-perplexity-prompt.md` (11.2KB)
 
-**Fazer:** Abre URL → copia tudo → cola no Perplexity Pro → Deep Research → me manda output.
+**Fazer:** Abre → copia → Perplexity Pro → Deep Research → me traz output.
 
 ---
 
 ## ② Perplexity → Hermes
 
 **Fazer:** Copia output → me manda no Telegram.
-**Eu faço:** Processo com DeepSeek v4-pro → organizo `prompts/gpt55/` → te dou URL.
+**Eu faço:** Processo com DeepSeek, atualizo `prompts/gpt55/` com dados reais da pesquisa.
 
 ---
 
 ## ③ GPT 5.5 ext thinking
 
-**URL:** `https://raw.githubusercontent.com/andreengineer/buying-agent/main/prompts/mobile-pack/harem-gpt55-prompt.md`
+**URL (atualizada após Perplexity):** `https://raw.githubusercontent.com/andreengineer/buying-agent/main/prompts/mobile-pack/harem-gpt55-prompt.md`
 
-**Fazer:** Abre URL → copia tudo → cola no ChatGPT (GPT 5.5 + extended thinking) → envia.
-Pede: "Output as single .md file, no zip."
+**Fazer:** Abre → copia → ChatGPT (GPT 5.5 + ext thinking) → envia → pede output como 1 .md
 
 ---
 
 ## ④ Fable 5
 
-**Fazer:** Copia output do GPT 5.5 → claude.ai → novo projeto → cola → aguarda.
+**Fazer:** Copia output do GPT → claude.ai → novo projeto → cola
 
 ---
 
-## URLs fixas
+## URLs atuais
 
-| O quê | URL |
-|-------|-----|
-| Perplexity (Harem) | `https://raw.githubusercontent.com/andreengineer/buying-agent/main/prompts/mobile-pack/harem-marketplace-perplexity-prompt.md` |
+| Prompt | URL |
+|--------|-----|
+| Perplexity (lead gen gamificação) | `https://raw.githubusercontent.com/andreengineer/buying-agent/main/prompts/mobile-pack/harem-perplexity-prompt.md` |
+| Scrapling analysis | `https://raw.githubusercontent.com/andreengineer/buying-agent/main/prompts/reference/scrapling-analysis.md` |
 | Estado do sistema | `https://raw.githubusercontent.com/andreengineer/buying-agent/main/00_hot/HOT_CONTEXT.md` |
-| Este arquivo | `https://raw.githubusercontent.com/andreengineer/buying-agent/main/MOBILE_WORKFLOW.md` |
 
 ---
 
-## Feature 1 (alta prioridade): Compras + Gamificação
+## Correções importantes (i7)
 
-Quando chegar na etapa Fable 5, incluir no prompt:
-
-1. **Sexshop/bebidas/gifts** — catálogo, compra pré-agendamento, entrega no local
-2. **Pacote hora + presente** — combos preço fixo (ex: 4h + vinho + gift = U$500)
-3. **Gamificação heavy-spender** — tiers, badges, pontos por gasto, combos exclusivos
-4. **Para profissionais:** perfil com fotos, serviços, agenda, rating
-5. **Para casas:** gestão de profissionais, comissões, analytics
+| Antes | Agora |
+|-------|-------|
+| "Cafe" | **Puteiro high-ticket**, privacy-first |
+| Cliente qualquer | **Maior anunciante do Ilha do Prazer em VV** |
+| Apenas veneno | **Elis Space**: hormônios, peptídeos, megahair, beleza premium |
+| Cost-reduction | **Inovação + trends globais** |
+| 50/50 lead x extras | **80% lead gen, 20% gamificação/vídeo/gifts** |

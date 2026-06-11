@@ -1,28 +1,28 @@
-# README.md — Perplexity Pro Deep Research: Adult Entertainment Marketplace Brasil
+# README.md — Perplexity Pro Deep Research
 
 > **You are Perplexity Pro with Deep Research enabled.**
-> Your goal is to research the Brazilian adult entertainment marketplace industry for a new platform being built with a U$40k budget.
+> Your goal is to research **lead generation gamification in physical-experience adult entertainment marketplaces**, and how beauty/wellness ecosystems (hormone specialists, peptides, hair, premium beauty) integrate as professional retention + client acquisition tools.
 
-## Files in this directory
+## Files
 
 | File | Purpose |
 |------|---------|
-| `context.md` | Background: the client, business model, existing competitors |
-| `research_questions.md` | Research axes — answer ALL in depth |
+| `context.md` | Full business context |
+| `research_questions.md` | 5 research axes |
 
-## Instructions
+## Key Constraint
 
-1. Read `context.md` first — understand the business and the opportunity
-2. Read `research_questions.md` — investigate each question thoroughly
-3. Research in Portuguese AND English (Brazilian market focus)
-4. Return structured markdown:
-   - Executive Summary (top 5 insights)
-   - Detailed findings per research question
-   - Competitive analysis matrix
-   - Feature recommendations
-   - Pricing/compliance considerations
-5. **Cite ALL sources with URLs**
+**80% of research tokens on LEAD GENERATION.** Gamification, video subscription, gifts, beauty ecosystem are tailwind (20%). This is NOT a cost-reduction project. We need to **innovate and capitalize trends** from other adult entertainment markets globally.
 
-## Output
+## Output Format
 
-Single structured markdown document. No zip, no multiple files.
+Single structured markdown. Cite all sources. If insufficient data, say so.
+
+### Required Sections
+
+1. **Executive Summary** — top 5 actionable insights for lead gen
+2. **Lead Generation Gamification Deep-Dive** — loyalty programs, tiers, referral mechanics for physical venues
+3. **Beauty/Wellness Ecosystem as Retention Tool** — how hormone therapy, hair, premium beauty services retain top professionals and attract clients
+4. **Global Trends** — what other adult markets (US, Europe, Asia) are doing that Brazil isn't
+5. **Competitive Analysis** — Ilha do Prazer, Privacy, OnlyFans, Skooka — what features drive leads vs retention
+6. **Implementation Roadmap** — phasing: what builds leads first, what builds retention later

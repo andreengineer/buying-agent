@@ -1,89 +1,78 @@
-# Research Questions — Harem Marketplace Platform
+# Research Questions — Lead Gen Gamification + Beauty Ecosystem
 
-## 1. Competitor Analysis (Ilha do Prazer, Skooka, similares)
+**80% effort on lead generation. 20% on tailwind (video, gamification, gifts, beauty).**
 
-- How does Ilha do Prazer work? What features does it offer? (profiles, booking, payments, reviews, ads?)
-- What is Ilha do Prazer's pricing model? (commission per booking? monthly fee? ad packages?)
-- How do professionals/venues use the platform? What's the workflow?
-- What features are missing or poorly executed that a new platform could improve?
-- How does Skooka compare? Differentiators?
-- What other adult entertainment marketplaces exist in Brazil? (regional players, niche platforms)
-- What do user reviews say about these platforms? (pain points, complaints, desires)
+---
 
-## 2. Business Model & Pricing
+## 1. Lead Generation Gamification for Physical Experience Marketplaces
 
-- What commission structures do adult marketplace platforms use?
-- What are the typical pricing tiers for professionals? (hourly rates by region/type)
-- How do platforms handle payments? (gateways, chargebacks, age verification)
-- What are the advertising/promotion options for venues within these platforms?
-- What is the average customer LTV in this space?
-- What premium features could justify higher margins?
+This is the CORE of the research (40% of effort).
 
-## 3. Feature Benchmarking
+- What gamification mechanics **provenly drive lead generation** in matchmaking/dating/adult service platforms? (not just retention — actual NEW client acquisition)
+- **Referral mechanics:** What referral programs work in high-ticket adult/escort marketplaces? Cash referral? Free credits? Tier upgrades?
+- **Tiered visibility:** How do platforms gamify advertiser visibility? (e.g., "Gold advertisers get top placement, Silver get second page") — what pricing works?
+- **Scarcity mechanics:** "Only 3 Gold slots available this week" — do these work for B2B clients (venues)?
+- **Nearby/alerts:** Push notification gamification — "New professional near you" as a lead gen tool?
+- **First-timer incentives:** What converts first-time visitors into paying clients? (discounts, free credits, matching bonuses?)
+- **Case studies:** Specific examples of platforms that successfully used gamification to increase leads by 50%+
+- **What Brazilian adult marketplaces are doing TODAY** for lead gen — and what's missing
 
-Research the **exact features** of platforms in this space:
+## 2. Beauty/Wellness Ecosystem as Professional Retention + Client Acquisition (15%)
 
-### Profiles & Discovery
-- What information do professional profiles include? (photos, videos, stats, services, availability)
-- How is search/filtering implemented? (location, price, services, ratings, availability)
-- How are venues displayed vs individual professionals?
+The founder owns **Elis Space** (hormone specialists, peptides, megahair, premium beauty).
 
-### Booking & Scheduling
-- How does scheduling work across platforms? (real-time calendar, request-based, instant book?)
-- What happens after booking? (confirmation, reminders, check-in process?)
+- **Beauty as retention:** How do adult entertainment venues retain top professionals? Case studies of venues offering beauty/wellness benefits
+- **Beauty as client magnet:** Would offering beauty services (hair, aesthetic treatments) AT the venue attract more clients? Is there a model where clients book beauty + companionship?
+- **Employee benefits in adult industry:** What non-cash benefits retain top talent in adult entertainment?
+- **Beauty subscription for professionals:** Would a monthly beauty/wellness package (peptides, hormones, hair maintenance) reduce professional churn?
+- **Cross-sell model:** Could the platform offer beauty services as an upsold add-on for clients? (e.g., "Add a megahair session for your companion as a gift")
+- **Brazilian precedent:** Any adult venue in Brazil offering beauty/wellness as a competitive advantage?
 
-### Payments & Commerce
-- What payment methods are accepted? (Pix, credit card, crypto?)
-- How are tips, deposits, and pre-payments handled?
-- How does the platform handle the "sexshop/gift" add-on concept?
-- What fraud prevention measures exist?
+## 3. Global Trends in Adult Entertainment Marketplaces (15%)
 
-### Reviews & Trust
-- How are reviews/ratings implemented? (verified only? anonymous?)
-- What identity verification exists for both professionals and clients?
+What are other markets doing that Brazil ISN'T?
 
-## 4. Gamification in Adult/Service Marketplaces
+- **Video subscription:** OnlyFans model applied to physical venues — subscription that includes exclusive content + booking priority?
+- **Token/tip economies:** Tokens that work both digitally (tips on content) AND physically (redeem for booking upgrades)?
+- **NFT/loyalty passes:** Any legit use of blockchain for adult loyalty programs? (not crypto speculation — actual utility)
+- **AI matchmaking:** AI matching clients to professionals based on preferences, history, behavior?
+- **Virtual dates → physical conversion:** Models that start online and convert to physical
+- **Loyalty programs across venues:** Multi-venue loyalty programs (client earns points at Venue A, spends at Venue B)
+- **Markets to watch:** What are the most innovative adult entertainment platforms globally in 2025-2026?
 
-- What gamification mechanics exist in adult entertainment or dating platforms? (tiers, badges, points, leaderboards)
-- Case studies of successful gamification: What made them work?
-- How could a "loyalty program" work for high-spending users (U$1-4k)?
-- "Package deals" — examples of bundling services + products in this industry
-- How do platforms encourage repeat visits from heavy spenders?
+## 4. Ad Package Model: B2B + B2C (15%)
 
-## 5. Legal & Compliance Brazil
+The platform's revenue model is **recurring ad packages** for venues AND independent professionals.
 
-- What regulations apply to adult entertainment marketplaces in Brazil?
-- Age verification requirements and best practices
-- Data privacy (LGPD) considerations for professional and client data
-- Payment processing restrictions for adult content/services
-- Liability considerations: what happens if a booking goes wrong?
-- Are there specific municipal/state regulations in Espírito Santo?
+- **B2B ad packages for venues:** What do adult marketplaces charge venues per month? What do they deliver? (x impressions, y featured listings, z highlighted profiles)
+- **B2C ad packages for professionals:** What do individual advertisers pay? Per profile? Per photo? Per video?
+- **Tiered ad products:** How should Bronze/Silver/Gold/Platinum ad packages differ for this industry?
+- **Agentified ad management:** AI-managed campaigns that auto-optimize — is anyone doing this for adult entertainment?
+- **Cross-platform ad packages:** Bundling platform visibility + Google/Meta/TikTok ads managed by the platform
+- **ROI measurement:** How do venues measure ad ROI in this space? (cost per lead, cost per booking, cost per $1 earned)
+- **Pricing benchmarks:** What's the ceiling for ad spend in this industry? (founder already spends U$8k/mo — what would justify U$15k/mo?)
 
-## 6. Technology & Platform Architecture
+## 5. Technology & Implementation Considerations (15%)
 
-- What tech stacks do existing adult marketplaces use? (any public info)
-- What are the critical technical challenges? (scalability, content moderation, fraud prevention, payment processing)
-- What APIs exist for age verification, identity checks, payment gateways in Brazil?
-- How to handle image/video content at scale? (CDN, moderation, DMCA)
-
-## 7. Growth & Acquisition Strategy
-
-- How do existing platforms acquire venues and professionals?
-- What's the typical CAC for acquiring both supply (professionals) and demand (clients)?
-- How did Ilha do Prazer grow? (initial strategy, funding, marketing)
-- What role does SEO play in this space?
-- Elisangela spends U$8k/mo on competitor ads — what's the migration strategy?
+- **Privacy-first architecture:** How to build a platform where high-ticket clients feel safe? (anonymous profiles, encrypted comms, discreet billing)
+- **Age verification:** Best APIs for age verification in Brazil (gov.br, facial recognition, document validation)
+- **Payment processing:** Brazilian gateways that accept adult entertainment (Pix is easy — credit card chargeback risk?)
+- **Mobile-first PWA:** Requirements for a PWA that works like an app on Android (push notifications, camera access for content upload)
+- **Scrapling integration:** Since competitor data is copyable, how to ethically scrape and onboard professionals from existing marketplaces?
+- **Content moderation:** Automated adult content moderation — what tools exist for the Brazilian market?
 
 ---
 
 ## Output Requirements
 
-Return your research as structured markdown with:
-1. **Executive Summary** — top 5 actionable insights
-2. **Competitive Deep-Dive** — per-competitor analysis with features, pricing, gaps
-3. **Feature Recommendations** — what to build, what to skip, priority order
-4. **Gamification/Commerce Opportunities** — specific mechanics for heavy-spender retention
-5. **Legal & Compliance Checklist** — must-haves before launch
-6. **Implementation Notes** — technical considerations, risks, unknowns
+Research must produce:
 
-**Cite ALL sources.** If insufficient data, say so.
+1. **Lead Gen Gamification Blueprint** (40%) — 3-5 specific mechanics with expected impact
+2. **Beauty Ecosystem Integration** (15%) — how Elis Space plugs into the platform
+3. **Global Trend Report** (15%) — 5 trends Brazil should adopt first
+4. **Ad Package Pricing Framework** (15%) — tiered packages with price points in BRL/USD
+5. **Implementation Risks** (15%) — technical, legal, competitive risks
+
+## Final Reminder
+
+**This is NOT a cost-reduction project.** The platform should innovate and capitalize on trends. Elisangela has the budget (U$40k), the ad spend (U$8k/mo), and the beauty ecosystem (Elis Space) to create something Ilha do Prazer can't copy easily.
