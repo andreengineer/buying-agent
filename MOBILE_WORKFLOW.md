@@ -1,7 +1,7 @@
-# MOBILE_WORKFLOW.md — Pipeline 1-Arquivo
+# MOBILE_WORKFLOW.md — Pipeline
 
-> Cada estágio = **1 URL raw** → copia tudo → cola no destino.
-> Zero zip, zero extração, zero múltiplos arquivos no Poco C65.
+> Cada estágio = **1 URL** → copia tudo → cola no destino.
+> Zero zip. Zero extração. Zero navegação em diretório.
 
 ---
 
@@ -9,53 +9,45 @@
 
 ```
 Hermes → Perplexity → Hermes/DeepSeek → GPT 5.5 → Fable 5
- ①        ②             ③               ④          ⑤
 ```
 
 ---
 
-## ① Hermes → Perplexity Pro (deep research)
+## ① Perplexity Pro (deep research)
 
-**Já está no ar:** https://raw.githubusercontent.com/andreengineer/buying-agent/main/prompts/perplexity-valuation-engine.md
+**URL pra copiar:** https://raw.githubusercontent.com/andreengineer/buying-agent/main/prompts/mobile-pack/perplexity-full-prompt.md
 
-**Fazer:** Abre URL → copia tudo → cola no Perplexity Pro → Deep Research → aguarda output → me manda o output.
-
----
-
-## ② Perplexity → Hermes (DeepSeek v4-pro)
-
-**Você faz:** Copia o output do Perplexity → me manda no Telegram.
-
-**Eu faço:** Processo com DeepSeek v4-pro → estruturo → gero `prompts/gpt55-brief.md` → push no GitHub → te dou a URL.
+**Fazer:** Abre URL → copia tudo → cola no Perplexity Pro → Deep Research → me manda output.
 
 ---
 
-## ③ Hermes → GPT 5.5 ext thinking
+## ② Perplexity → Hermes
 
-**URL (chega após etapa 2):** `https://raw.githubusercontent.com/andreengineer/buying-agent/main/prompts/gpt55-brief.md`
+**Fazer:** Copia output do Perplexity → me manda no Telegram.
+**Eu faço:** Processo com DeepSeek v4-pro → organizo em `prompts/gpt55/` → te dou URL.
+
+---
+
+## ③ GPT 5.5 ext thinking
+
+**URL (chega após etapa 2):** `https://raw.githubusercontent.com/andreengineer/buying-agent/main/prompts/mobile-pack/gpt55-full-prompt.md`
 
 **Fazer:** Abre URL → copia tudo → cola no ChatGPT com GPT 5.5 + extended thinking → envia.
-
-**O GPT 5.5 vai gerar UM arquivo .md. Peça:** "Output as a single .md file that I can copy-paste directly into Claude Fable 5. No zip, no multiple files."
-
----
-
-## ④ GPT 5.5 → Fable 5
-
-**Fazer:** Copia o output .md do GPT 5.5 → abre claude.ai → cria **novo projeto** → cola como primeira mensagem → aguarda.
+Pede: "Output as a single .md file, no zip."
 
 ---
 
-## Regras
+## ④ Fable 5
 
-| Regra | Por quê |
-|-------|---------|
-| **1 URL = 1 estágio** | Sem procurar arquivo em diretório no Android |
-| **Nunca .zip** | Poco C65 não extrai zip fácil |
-| **Nunca múltiplos arquivos** | Confunde no Files app |
-| **Copia tudo → cola** | Zero edição manual |
-| **Output de um = input do próximo** | Pipeline linear, sem desvio |
+**Fazer:** Copia output do GPT 5.5 → claude.ai → novo projeto → cola → aguarda.
 
 ---
 
-*Atualizado: 2026-06-11*
+## URLs fixas
+
+| O quê | URL |
+|-------|-----|
+| Perplexity (mobile) | `https://raw.githubusercontent.com/andreengineer/buying-agent/main/prompts/mobile-pack/perplexity-full-prompt.md` |
+| Scrapling analysis | `https://raw.githubusercontent.com/andreengineer/buying-agent/main/prompts/reference/scrapling-analysis.md` |
+| Estado do sistema | `https://raw.githubusercontent.com/andreengineer/buying-agent/main/00_hot/HOT_CONTEXT.md` |
+| Workflow (este) | `https://raw.githubusercontent.com/andreengineer/buying-agent/main/MOBILE_WORKFLOW.md` |
