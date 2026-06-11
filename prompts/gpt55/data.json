@@ -1,0 +1,64 @@
+{
+  "_schema": "harem-marketplace-v1",
+  "_desc": "Structured constraints and data for GPT 5.5 to generate the Fable 5 prompt",
+  "project": {
+    "name": "Harem Marketplace",
+    "budget_usd": 40000,
+    "timeline": "2026 Q3",
+    "current_monthly_ad_spend": 8000
+  },
+  "supply_side": {
+    "types": ["physical_venues", "independent_professionals"],
+    "conflict_rule": "Platform is neutral. Branding segregated from Harem Cafe. No visible conflict."
+  },
+  "revenue_model": {
+    "primary": "recurring_ad_packages_b2b_b2c",
+    "description": "Venues and professionals pay monthly for ad visibility, featured listings, promoted profiles",
+    "secondary": "optional_commission_on_transactions",
+    "agentified_ads": {
+      "ai_managed": true,
+      "saas_dashboard": true,
+      "cmo_count": 1,
+      "channels": ["google", "meta", "tiktok", "partner_marketplaces"]
+    }
+  },
+  "feature_1_gamification": {
+    "priority": "high",
+    "components": [
+      "sexshop_catalog_pre_order",
+      "beverages_pre_order",
+      "luxury_gifts_catalog",
+      "purpose_package_hours_plus_gift",
+      "gamification_tiers",
+      "points_per_dollar_spent",
+      "badges_system",
+      "exclusive_combos_per_tier"
+    ],
+    "tiers": ["Bronze", "Silver", "Gold", "Platinum"]
+  },
+  "platform_features": {
+    "profiles": ["venues", "professionals", "clients"],
+    "booking_scheduling": true,
+    "payments": true,
+    "messaging": true,
+    "ratings_reviews": true,
+    "sexshop_ecommerce": true,
+    "gamification": true,
+    "ad_management_saas": true
+  },
+  "growth_strategy": {
+    "phase_1": "Platform MVP + first venues and professionals onboarded",
+    "phase_2": "Gradual ad spend migration ($8k/mo from competitors)",
+    "phase_3": "Scale B2B/B2C ad packages, expand ES",
+    "agentified_ads_goals": "AI manages campaigns, auto-optimizes creative, budget allocation, targeting"
+  },
+  "constraints": {
+    "branding_segregated": true,
+    "no_conflict_of_interest": true,
+    "mobile_first": true,
+    "brazilian_market": true,
+    "legal_adult_entertainment": true,
+    "lgpd_compliance": true,
+    "age_verification_required": true
+  }
+}

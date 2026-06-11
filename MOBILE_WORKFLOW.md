@@ -30,7 +30,7 @@ Hermes → Perplexity → Hermes/DeepSeek → GPT 5.5 → Fable 5
 
 ## ③ GPT 5.5 ext thinking
 
-**URL (após etapa 2):** `https://raw.githubusercontent.com/andreengineer/buying-agent/main/prompts/mobile-pack/harem-gpt55-brief.md`
+**URL:** `https://raw.githubusercontent.com/andreengineer/buying-agent/main/prompts/mobile-pack/harem-gpt55-prompt.md`
 
 **Fazer:** Abre URL → copia tudo → cola no ChatGPT (GPT 5.5 + extended thinking) → envia.
 Pede: "Output as single .md file, no zip."
