@@ -1,78 +1,62 @@
-# Research Questions — Lead Gen Gamification + Beauty Ecosystem
+# RESEARCH BRIEF: Lead Generation Gamification for Adult Entertainment Marketplace
 
-**80% effort on lead generation. 20% on tailwind (video, gamification, gifts, beauty).**
+## Context
 
----
+Founder: Elisangela Meira Andrade, Vila Velha-ES. High-ticket adult venue (privacy-first, U$1-4k/client), largest advertiser on Ilha do Prazer in VV. Owns Elis Space (beauty clinic: hormones, peptides, megahair, premium beauty).
 
-## 1. Lead Generation Gamification for Physical Experience Marketplaces
+Goal: Marketplace platform that generates LEADS for multiple adult venues + independent professionals. Revenue = recurring ad packages. NOT cost-reduction — innovation first.
 
-This is the CORE of the research (40% of effort).
+## EXECUTE: 5 Axes Deep Research
 
-- What gamification mechanics **provenly drive lead generation** in matchmaking/dating/adult service platforms? (not just retention — actual NEW client acquisition)
-- **Referral mechanics:** What referral programs work in high-ticket adult/escort marketplaces? Cash referral? Free credits? Tier upgrades?
-- **Tiered visibility:** How do platforms gamify advertiser visibility? (e.g., "Gold advertisers get top placement, Silver get second page") — what pricing works?
-- **Scarcity mechanics:** "Only 3 Gold slots available this week" — do these work for B2B clients (venues)?
-- **Nearby/alerts:** Push notification gamification — "New professional near you" as a lead gen tool?
-- **First-timer incentives:** What converts first-time visitors into paying clients? (discounts, free credits, matching bonuses?)
-- **Case studies:** Specific examples of platforms that successfully used gamification to increase leads by 50%+
-- **What Brazilian adult marketplaces are doing TODAY** for lead gen — and what's missing
+### AXIS 1 — Lead Generation Gamification (40%)
+- Referral programs for high-ticket adult marketplaces
+- Tiered advertiser visibility (Gold/Silver placement)
+- Scarcity mechanics (limited slots)
+- Push notification gamification for lead gen
+- First-timer conversion incentives
+- Case studies of 50%+ lead increase from gamification
+- What Brazilian adult marketplaces use TODAY — what's missing
 
-## 2. Beauty/Wellness Ecosystem as Professional Retention + Client Acquisition (15%)
+### AXIS 2 — Beauty/Wellness Retention (15%)
+- How adult venues retain top professionals with non-cash benefits
+- Beauty subscription for professionals (hormones, hair, aesthetics)
+- Cross-sell: client buys beauty treatment as gift for companion
+- Brazilian precedent for beauty+adult venue integration
+- Elis Space integration strategy
 
-The founder owns **Elis Space** (hormone specialists, peptides, megahair, premium beauty).
+### AXIS 3 — Global Trends (15%)
+- Video subscription + booking priority
+- Token/tip economies (digital + physical)
+- AI matchmaking for adult entertainment
+- Multi-venue loyalty programs
+- Most innovative global adult platforms 2025-2026
 
-- **Beauty as retention:** How do adult entertainment venues retain top professionals? Case studies of venues offering beauty/wellness benefits
-- **Beauty as client magnet:** Would offering beauty services (hair, aesthetic treatments) AT the venue attract more clients? Is there a model where clients book beauty + companionship?
-- **Employee benefits in adult industry:** What non-cash benefits retain top talent in adult entertainment?
-- **Beauty subscription for professionals:** Would a monthly beauty/wellness package (peptides, hormones, hair maintenance) reduce professional churn?
-- **Cross-sell model:** Could the platform offer beauty services as an upsold add-on for clients? (e.g., "Add a megahair session for your companion as a gift")
-- **Brazilian precedent:** Any adult venue in Brazil offering beauty/wellness as a competitive advantage?
+### AXIS 4 — Ad Package Pricing (15%)
+- Monthly venue pricing benchmarks
+- Bronze/Silver/Gold/Platinum tier differentiators
+- AI-managed ad campaigns for adult
+- Bundled platform + Google/Meta/TikTok ads
+- ROI measurement (cost per lead/booking)
 
-## 3. Global Trends in Adult Entertainment Marketplaces (15%)
+### AXIS 5 — Tech & Compliance (15%)
+- Privacy-first architecture
+- Age verification APIs in Brazil
+- Payment gateways accepting adult content
+- PWA for Android
+- Content moderation (Brazilian Portuguese)
+- LGPD compliance
+- Ethical scraping for professional onboarding
 
-What are other markets doing that Brazil ISN'T?
+## Output: 6 sections
+1. EXECUTIVE SUMMARY — top 5 insights
+2. LEAD GEN BLUEPRINT — 3-5 mechanics with impact estimate
+3. BEAUTY INTEGRATION — Elis Space strategy
+4. GLOBAL TREND REPORT — 5 trends for Brazil
+5. AD PRICING FRAMEWORK — tiers in BRL/USD
+6. RISKS & MITIGATIONS
 
-- **Video subscription:** OnlyFans model applied to physical venues — subscription that includes exclusive content + booking priority?
-- **Token/tip economies:** Tokens that work both digitally (tips on content) AND physically (redeem for booking upgrades)?
-- **NFT/loyalty passes:** Any legit use of blockchain for adult loyalty programs? (not crypto speculation — actual utility)
-- **AI matchmaking:** AI matching clients to professionals based on preferences, history, behavior?
-- **Virtual dates → physical conversion:** Models that start online and convert to physical
-- **Loyalty programs across venues:** Multi-venue loyalty programs (client earns points at Venue A, spends at Venue B)
-- **Markets to watch:** What are the most innovative adult entertainment platforms globally in 2025-2026?
-
-## 4. Ad Package Model: B2B + B2C (15%)
-
-The platform's revenue model is **recurring ad packages** for venues AND independent professionals.
-
-- **B2B ad packages for venues:** What do adult marketplaces charge venues per month? What do they deliver? (x impressions, y featured listings, z highlighted profiles)
-- **B2C ad packages for professionals:** What do individual advertisers pay? Per profile? Per photo? Per video?
-- **Tiered ad products:** How should Bronze/Silver/Gold/Platinum ad packages differ for this industry?
-- **Agentified ad management:** AI-managed campaigns that auto-optimize — is anyone doing this for adult entertainment?
-- **Cross-platform ad packages:** Bundling platform visibility + Google/Meta/TikTok ads managed by the platform
-- **ROI measurement:** How do venues measure ad ROI in this space? (cost per lead, cost per booking, cost per $1 earned)
-- **Pricing benchmarks:** What's the ceiling for ad spend in this industry? (founder already spends U$8k/mo — what would justify U$15k/mo?)
-
-## 5. Technology & Implementation Considerations (15%)
-
-- **Privacy-first architecture:** How to build a platform where high-ticket clients feel safe? (anonymous profiles, encrypted comms, discreet billing)
-- **Age verification:** Best APIs for age verification in Brazil (gov.br, facial recognition, document validation)
-- **Payment processing:** Brazilian gateways that accept adult entertainment (Pix is easy — credit card chargeback risk?)
-- **Mobile-first PWA:** Requirements for a PWA that works like an app on Android (push notifications, camera access for content upload)
-- **Scrapling integration:** Since competitor data is copyable, how to ethically scrape and onboard professionals from existing marketplaces?
-- **Content moderation:** Automated adult content moderation — what tools exist for the Brazilian market?
-
----
-
-## Output Requirements
-
-Research must produce:
-
-1. **Lead Gen Gamification Blueprint** (40%) — 3-5 specific mechanics with expected impact
-2. **Beauty Ecosystem Integration** (15%) — how Elis Space plugs into the platform
-3. **Global Trend Report** (15%) — 5 trends Brazil should adopt first
-4. **Ad Package Pricing Framework** (15%) — tiered packages with price points in BRL/USD
-5. **Implementation Risks** (15%) — technical, legal, competitive risks
-
-## Final Reminder
-
-**This is NOT a cost-reduction project.** The platform should innovate and capitalize on trends. Elisangela has the budget (U$40k), the ad spend (U$8k/mo), and the beauty ecosystem (Elis Space) to create something Ilha do Prazer can't copy easily.
+## Rules
+- Cite every source with URL
+- Search in Portuguese too
+- "No data" is acceptable — never fabricate
+- Prefer 2024-2026 sources
