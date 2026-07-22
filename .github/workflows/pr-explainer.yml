@@ -1,0 +1,18 @@
+name: PR Explainer AI
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+jobs:
+  explain:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: rafaeltorresng/pr-explainer-action@v1
+        with:
+          openrouter_api_key: ${{ secrets.OPENROUTER_API_KEY }}
+          language: pt-BR
