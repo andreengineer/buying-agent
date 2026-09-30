@@ -1,0 +1,30 @@
+# Varredura de segurança da base de prompts/skills.
+# Origem: open-gsd/gsd-core (scripts de prompt-injection / secret / base64 scan).
+# Falha o PR se houver injeção de prompt em Markdown, secret hardcoded ou base64 opaco.
+name: security-scan
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  scan:
+    name: Varredura de prompt-injection e secrets
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # if: always() em cada passo -> os 3 scanners sempre reportam,
+      # e o job falha se qualquer um deles falhar.
+      - name: Prompt injection em Markdown
+        if: always()
+        run: bash scripts/prompt-injection-scan.sh --dir .
+
+      - name: Secrets hardcoded
+        if: always()
+        run: bash scripts/secret-scan.sh --dir .
+
+      - name: Blobs base64 opacos
+        if: always()
+        run: bash scripts/base64-scan.sh --dir .
