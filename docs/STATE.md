@@ -18,12 +18,16 @@ alwaysApply: true
 - **Hermes:** rodada de pesquisa de 10h em `goals/2026-10-21_nightly_goal.md` (apontar o arquivo
   explicitamente — o seletor `ls goals/ | sort | tail -1` devolve `README.md`).
 - **Self-org lane:** `specs/0003-pv-since-last-open/` (PalantirView, Codex no lat).
+- **Foco:** `specs/0004-focus-guardrails/` — blocos no calendário por task (Hermes), check-in no Telegram,
+  `/park`. Orçamento do André na semana: ~4h em 11 blocos (`week-2026-10-21.blocks.yaml`).
+- **Delegação:** Codex/Hermes em `gpt-6.1-sol` esforço `low` (regra no `CLAUDE.md`/`AGENTS.md`).
 - Dados da coorte e logs de ops ficam em `~/isaura-data/` — **nunca** neste repo (público).
 
 ## Decisões recentes
 - 2026-10-21 (proposta, vale com o merge): escada de autonomia A0→A3; semana 1 = A0 para todos, A1 só André, agente nunca paga
 - 2026-10-21 (proposta): vertical padrão da semana 1 = bens duráveis R$ 200–5k; farmácia/mercado só como dado de pesquisa
-- 2026-10-21 (proposta): esforço padrão do Codex = `high`; `max` só com `escalate:` (fecha D1)
+- 2026-10-21 (André): esforço padrão do Codex/Hermes = `gpt-6.1-sol` `low`; `medium` só após gate falhar 2× (fecha D1)
+- 2026-10-21 (proposta): sem Notion/Slack — calendário + Telegram + repo; ferramenta nova só entra matando uma
 - 2026-07-02: Adotado SDD (@igoruehara/spec-driven v0.1.10) como governance model
 - 2026-07-02: MCP CodeSpar configurado no Hermes (setup mode, sem API key ainda)
 - 2026-07-02: CI gate esteira configurado em `.github/workflows/esteira.yml`

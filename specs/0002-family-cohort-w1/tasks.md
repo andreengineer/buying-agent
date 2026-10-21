@@ -31,7 +31,8 @@ H8 = research card in `goals/2026-10-21_nightly_goal.md` (marketplace integratio
 ## Pairing protocol (CC + Codex gpt-6.1-sol)
 1. CC writes the card for each Codex task: task row above + links to spec, design §, contract files. Nothing else.
 2. Codex runs headless in its worktree with stdin closed (`< /dev/null`; a run with stdin open hung for 69 min before).
-   Default effort `high`. `max` only when CC writes `escalate:` in the card. CC checks exact flags with `codex exec --help` first.
+   Model `gpt-6.1-sol`, effort `low` for every card. `medium` only after the task's gate fails twice, via `escalate:` in the card.
+   CC checks exact flags with `codex exec --help` first. Time estimates and calendar blocks: `../0004-focus-guardrails/week-2026-10-21.blocks.yaml`.
 3. Codex commits on its task branch only. It never merges and never edits paths outside its row.
 4. CC runs the gate, reviews the diff, merges into `feat/0002-family-cohort-w1`, updates Status.
 5. CC-owned tasks get a read-only review from Codex (`REVIEW.md` in the worktree, not committed).

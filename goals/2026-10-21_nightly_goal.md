@@ -19,8 +19,8 @@ Turn the family-cohort thesis into numbers: where a buying agent creates measura
 
 ## Quota policy (read before launching anything)
 1. Read the meters at start and every 60 min: Codex `/status` (5h and weekly). If no machine-readable
-   meter exists, count messages per 5h window: gpt-6.1-sol ≤ 60, gpt-6-luna ≤ 800.
-2. Bulk extraction → gpt-6-luna. Synthesis and judgment → gpt-6.1-sol, effort medium. Never `max`.
+   meter exists, count messages per 5h window: gpt-6.1-sol low ≤ 60.
+2. Every card runs on gpt-6.1-sol, effort low. Never `max`. `medium` only for a card whose output failed review twice.
 3. Build has first claim: if `~/isaura-data/ops/dispatch.md` shows a queued Codex build task, research
    pauses when the 5h meter reaches 70%.
 4. **Weekly guard:** stop all research cards at 45% of the weekly meter. Finish writing outputs with what exists.
@@ -70,9 +70,9 @@ Telegram at launch + 10h: 3 lines + the DIGEST path. No pings before that unless
   "goal_id": "2026-10-21-research-01",
   "window": { "start": "at_launch", "duration_h": 10 },
   "quota": {
-    "bulk_model": "gpt-6-luna",
-    "synthesis_model": "gpt-6.1-sol",
-    "synthesis_effort": "medium",
+    "model": "gpt-6.1-sol",
+    "effort": "low",
+    "escalate_effort": "medium",
     "fallback_model": "deepseek-v4-flash",
     "weekly_guard_pct": 45,
     "yield_to_build_at_5h_pct": 70,

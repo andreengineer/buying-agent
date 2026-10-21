@@ -118,10 +118,10 @@ Week 1 runs A0 for everyone and A1 for André only. Raising autonomy = raising t
 
 | Step | Model | Constraint |
 |---|---|---|
-| Intake, clarifying questions | Claude Sonnet (low) or GPT | family content → Claude/GPT only |
+| Intake, clarifying questions | gpt-6.1-sol low or Claude Sonnet low | family content → Claude/GPT only |
 | Audio transcription | local first, else GPT | never a non-Claude/GPT third-party API |
-| Page extraction (public web) | gpt-6-luna; DeepSeek fallback | public content only |
-| "Why" lines, L3 narrative | gpt-6.1-sol medium or Sonnet | ≤ 120 chars per why |
+| Page extraction (public web) | gpt-6.1-sol low; DeepSeek fallback | public content only |
+| "Why" lines, L3 narrative | gpt-6.1-sol low | ≤ 120 chars per why |
 | Scoring | code | no LLM |
 
 ## 8. Local data layout (never committed — this repo is public)

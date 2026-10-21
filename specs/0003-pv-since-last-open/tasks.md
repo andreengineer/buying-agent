@@ -7,7 +7,7 @@ alwaysApply: false
 # Tasks — PalantirView: summary since last open
 
 > Owner: Codex on lat, branch `pv-summaries` in the PalantirView repo. Read-only on chat data.
-> CC reviews and merges. Model: gpt-6.1-sol medium for merges, gpt-6-luna for chunk notes.
+> CC reviews and merges. Model: gpt-6.1-sol effort low for everything; `medium` only after a gate fails twice.
 
 ## Plan
 | # | Task | Covers AC | Depends | Gate | Status |

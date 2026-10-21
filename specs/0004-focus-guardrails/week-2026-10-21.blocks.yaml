@@ -1,0 +1,40 @@
+# Week blocks template — family cohort #1 (2026-10-21 → 10-27)
+# Hermes copies this to ~/isaura-data/ops/blocks.yaml and fills local-only details there.
+# est_min = estimate. who: andre (busy, invited) | agent (free event). lane: V value | S self-org | M misc.
+# Agent estimates assume gpt-6.1-sol effort low; they are guesses until blocks.jsonl has actuals.
+# Personal items stay generic here; their details live in local goals.md.
+
+week: 2026-10-21
+quiet_hours: "00:00-09:00"
+caps: { andre_blocks_per_day: 4, andre_min_per_day: 180, agent_parallel: 3 }
+
+andre:
+  - { id: A1,  day: wed, lane: V, est_min: 15, tag: blocked_on_andre, task: "Skim and merge the 0002 PR (approves design)", done: "PR merged" }
+  - { id: A2,  day: wed, lane: V, est_min: 10, tag: blocked_on_andre, task: "Answer the 6 cohort inputs", done: "INPUTS.md filled or defaults accepted" }
+  - { id: A3,  day: wed, lane: V, est_min: 30, task: "Rotate every key ever pushed, at each provider", done: "old keys show revoked" }
+  - { id: A4,  day: wed, lane: V, est_min: 20, after: [H], task: "Read the CC kickoff report and the research digest", done: "1-line reply: keep or change vertical" }
+  - { id: A5,  day: thu, lane: V, est_min: 20, task: "Invite 2 relatives to the bot (agent drafts the message)", done: "2 relatives sent hello" }
+  - { id: A6,  day: thu, lane: V, est_min: 30, tag: blocked_on_andre, task: "Life-admin unblocker 1 (local goals.md)", done: "input handed to the agent" }
+  - { id: A7,  day: fri, lane: V, est_min: 30, after: [T6], task: "Dogfood: send your own real request, read L2 + L3, rate it", done: "rating logged" }
+  - { id: A8,  day: fri, lane: V, est_min: 15, tag: blocked_on_andre, task: "Life-admin unblocker 2 (local goals.md)", done: "input handed to the agent" }
+  - { id: A9,  day: sat, lane: V, est_min: 15, after: [T7], task: "First A1 purchase: pay the Pix in your bank app", done: "Order paid_by_human" }
+  - { id: A10, day: sun, lane: S, est_min: 15, after: [PV], task: "PalantirView: check the summary of 1 real group", done: "Asks section correct yes/no" }
+  - { id: A11, day: sun, lane: V, est_min: 45, task: "Weekly review: chart, parking lot keep/kill, week-2 rail for A2", done: "WEEK1.md + 1 decision" }
+
+agent:
+  - { id: H,   day: wed, lane: V, est_min: 600, owner: hermes, task: "Research run H1-H9", done: "research/2026-10-21/DIGEST.md" }
+  - { id: F0,  day: wed, lane: S, est_min: 15,  owner: cc,     task: "Verify calendar + Telegram access", done: "2-line report" }
+  - { id: T0,  day: wed, lane: V, est_min: 45,  owner: codex,  task: "Contracts", done: "fixtures validate" }
+  - { id: T2,  day: wed, lane: V, est_min: 60,  owner: cc,     task: "Single poller", done: "AC-2 green" }
+  - { id: F1-F5, day: thu, lane: S, est_min: 255, owner: codex, task: "Focus system build", done: "0004 gates green" }
+  - { id: T1,  day: thu, lane: V, est_min: 60,  owner: codex,  task: "Intake", done: "AC-1 green" }
+  - { id: T3,  day: thu, lane: V, est_min: 180, owner: codex,  after: [H], task: "Sourcing adapters", done: "AC-3 green" }
+  - { id: T4,  day: thu, lane: V, est_min: 60,  owner: codex,  task: "Scorer", done: "golden test green" }
+  - { id: T5,  day: thu, lane: V, est_min: 120, owner: codex,  task: "Renderers L1/L2/L3", done: "AC-4, AC-5 green" }
+  - { id: PV,  day: thu, lane: S, est_min: 240, owner: codex,  node: lat, task: "PalantirView since-last-open", done: "0003 gates green" }
+  - { id: F6,  day: thu, lane: S, est_min: 30,  owner: cc,     task: "Wire focus system into Hermes cron", done: "1 day in blocks.jsonl" }
+  - { id: T6,  day: fri, lane: V, est_min: 120, owner: cc,     task: "Flow wiring", done: "real request → L2 ≤ 10 min" }
+  - { id: T7,  day: sat, lane: V, est_min: 180, owner: cc,     task: "A1 checkout runner", done: "dry run stops at payment" }
+  - { id: T8,  day: sat, lane: V, est_min: 45,  owner: codex,  task: "Ledger + rating", done: "AC-7 green" }
+  - { id: T9,  day: sat, lane: V, est_min: 45,  owner: cc,     task: "Money guard", done: "AC-8 green" }
+  - { id: T10, day: sun, lane: V, est_min: 30,  owner: codex,  task: "WEEK1 metrics", done: "WEEK1.md" }
