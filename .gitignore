@@ -44,6 +44,10 @@ workspace/isaura/.env
 workspace/.env
 isaura-goal-metaprompt/*.env
 
+# Family cohort + ops data — local only (~/isaura-data/). This repo is public.
+cohort/
+ops/
+
 # Staging area — never committed as-is (use manifests/ instead)
 staging_sanitized/
 

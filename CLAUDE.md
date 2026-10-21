@@ -123,6 +123,19 @@ Se durante a implementação você precisar fazer diferente do que a `spec.md` d
   vai pro STATE.
 - Atualize o STATE ao pausar/encerrar uma sessão e leia-o ao retomar. Ver a skill `/handoff`.
 
+## Foco — guardrails suaves (spec 0004)
+> Avisam e registram. **Nunca recusam trabalho.** Logs em `~/isaura-data/ops/` (fora do repo).
+- **Comece nomeando o bloco** (`T#`, `H#`, `F#`, `PV#`, `A#`). Sem id → registre `unplanned` em
+  `guardrail.log` e siga.
+- **Ideia nova no meio do bloco** → sugira `/park <ideia>` no Telegram (vai para `parking.md`).
+  Não abra outra frente na mesma sessão.
+- **00:00–09:00 local** → um aviso, registre `after_midnight`, siga. Não agende nada nesse horário.
+- **WIP:** 1 bloco do André por vez; até 3 runs de agente em paralelo.
+- **Delegação:** Codex/Hermes em `gpt-6.1-sol` esforço `low`. `medium` só após o gate falhar 2×,
+  com `escalate:` no card. Sempre com stdin fechado.
+- **Sessão > 24h** → `/handoff` e feche.
+- **Ferramenta ou frente nova** só entra matando uma (1 linha em `kill.log`).
+
 ## Onde escrever
 - Decisão arquitetural durável → novo ADR (`docs/architecture/adr/`), nunca edite ADR antigo (são imutáveis; crie um que o substitua).
 - Estado do trabalho / próximo passo → `docs/STATE.md`.

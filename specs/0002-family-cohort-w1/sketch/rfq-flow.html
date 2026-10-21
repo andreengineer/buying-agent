@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fluxo do Pedido</title>
+<style>
+:root{
+  --bg:#f4f2ee; --surface:#ffffff; --surface-2:#f8f7f4; --ink:#1b1d21; --ink-2:#55595f; --ink-3:#8a8e94;
+  --line:#e3e0da; --chat:#0f766e; --chat-soft:#e3f2ef; --report:#4338ca; --report-soft:#e8e7fb;
+  --store:#b45309; --store-soft:#fbefdf; --ok:#15803d; --warn:#b45309; --bad:#b91c1c;
+  --user-bubble:#dff3ee; --bot-bubble:#ffffff; --fridge:#2d3138; --shadow:0 1px 2px rgba(0,0,0,.06),0 8px 24px rgba(0,0,0,.06);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#121417; --surface:#1b1e23; --surface-2:#22262c; --ink:#eceef1; --ink-2:#b2b7be; --ink-3:#7d838b;
+    --line:#2e333a; --chat:#2dd4bf; --chat-soft:#123a36; --report:#a5b4fc; --report-soft:#25264a;
+    --store:#f59e0b; --store-soft:#3a2a12; --ok:#4ade80; --warn:#fbbf24; --bad:#f87171;
+    --user-bubble:#173d38; --bot-bubble:#22262c; --fridge:#9aa3ad; --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.3);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#121417; --surface:#1b1e23; --surface-2:#22262c; --ink:#eceef1; --ink-2:#b2b7be; --ink-3:#7d838b;
+  --line:#2e333a; --chat:#2dd4bf; --chat-soft:#123a36; --report:#a5b4fc; --report-soft:#25264a;
+  --store:#f59e0b; --store-soft:#3a2a12; --ok:#4ade80; --warn:#fbbf24; --bad:#f87171;
+  --user-bubble:#173d38; --bot-bubble:#22262c; --fridge:#9aa3ad; --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.3);
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:15px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:20px 16px 48px}
+h1{font-size:22px;line-height:1.2;margin:0 0 4px;letter-spacing:-.01em}
+.sub{color:var(--ink-2);margin:0 0 16px;font-size:14px}
+.num{font-variant-numeric:tabular-nums}
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}
+.tag{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;padding:4px 10px;border-radius:999px;background:var(--surface);border:1px solid var(--line);color:var(--ink-2)}
+.dot{width:8px;height:8px;border-radius:50%}
+.d-chat{background:var(--chat)} .d-report{background:var(--report)} .d-store{background:var(--store)}
+
+/* flow strip */
+.flow{display:grid;grid-template-columns:repeat(6,minmax(132px,1fr));gap:8px;overflow-x:auto;padding:2px 2px 10px;margin:0 0 6px;scrollbar-width:thin}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:10px 12px;cursor:pointer;text-align:left;color:inherit;font:inherit;box-shadow:var(--shadow)}
+.step:focus-visible{outline:2px solid var(--chat);outline-offset:2px}
+.step b{display:block;font-size:13.5px;margin-top:4px}
+.step small{color:var(--ink-3);font-size:12px}
+.step .n{font-size:12px;color:var(--ink-3)}
+.where{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:8px 0 22px}
+.where div{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:13px;color:var(--ink-2)}
+.where strong{display:flex;align-items:center;gap:6px;color:var(--ink);font-size:13.5px;margin-bottom:2px}
+
+/* screens carousel */
+.screens{display:grid;grid-auto-flow:column;grid-auto-columns:min(344px,calc(100vw - 48px));align-items:start;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 16px;scrollbar-width:thin}
+.screen{scroll-snap-align:start}
+.cap{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink-2);margin:0 0 8px}
+.cap .n{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:var(--bg);font-size:12px;font-weight:600}
+.phone{background:var(--surface-2);border:1px solid var(--line);border-radius:26px;overflow:hidden;box-shadow:var(--shadow);min-height:640px;display:flex;flex-direction:column}
+.bar{display:flex;align-items:center;gap:10px;padding:12px 14px;background:var(--surface);border-bottom:1px solid var(--line)}
+.ava{width:30px;height:30px;border-radius:50%;background:var(--chat);color:#fff;display:grid;place-items:center;font-weight:700;font-size:14px}
+.bar b{font-size:14px;display:block;line-height:1.1} .bar small{color:var(--ink-3);font-size:11.5px}
+.bar.report .ava{background:var(--report)} .bar.store .ava{background:var(--store)}
+.body{padding:12px;display:flex;flex-direction:column;gap:8px;flex:1}
+.b{max-width:88%;padding:8px 11px;border-radius:14px;font-size:14px;box-shadow:0 1px 1px rgba(0,0,0,.04)}
+.me{align-self:flex-end;background:var(--user-bubble);border-bottom-right-radius:4px}
+.bot{align-self:flex-start;background:var(--bot-bubble);border:1px solid var(--line);border-bottom-left-radius:4px}
+.time{display:block;text-align:right;font-size:10.5px;color:var(--ink-3);margin-top:2px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.chip{border:1px solid var(--chat);color:var(--chat);background:transparent;border-radius:999px;padding:4px 10px;font-size:12.5px}
+.chip.on{background:var(--chat);color:#fff}
+.q{font-weight:600;font-size:13px;margin-top:8px}
+.prog{list-style:none;margin:6px 0 0;padding:0;font-size:13px}
+.prog li{display:flex;justify-content:space-between;gap:8px;padding:3px 0;border-bottom:1px dashed var(--line)}
+.prog li:last-child{border-bottom:0}
+.okc{color:var(--ok);font-weight:600}
+.muted{color:var(--ink-3)}
+
+/* L1 composite */
+.l1{align-self:flex-start;width:88%;aspect-ratio:9/16;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:9px;display:flex;flex-direction:column;gap:7px}
+.l1 h4{margin:0;font-size:12.5px;display:flex;justify-content:space-between;color:var(--ink)}
+.l1 h4 span{color:var(--ink-3);font-weight:500}
+.grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(3,1fr);gap:6px;flex:1}
+.tile{position:relative;border:1px solid var(--line);border-radius:10px;padding:6px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;background:var(--surface-2);overflow:hidden}
+.rk{position:absolute;left:6px;top:6px;font-size:10.5px;font-weight:700;color:var(--ink-2)}
+.sc{position:absolute;right:5px;top:5px;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:999px;color:#fff;background:var(--ink-3)}
+.sc.hi{background:var(--ok)} .sc.mid{background:var(--chat)}
+.fridge{width:34px;height:48px;border-radius:5px;background:var(--fridge);position:relative;margin-top:12px}
+.fridge::before{content:"";position:absolute;inset:4px 4px 9px 4px;border-radius:3px;background:linear-gradient(160deg,rgba(255,255,255,.7),rgba(130,180,210,.35))}
+.fridge::after{content:"";position:absolute;right:7px;top:11px;width:2px;height:16px;border-radius:2px;background:rgba(255,255,255,.85)}
+.tn{font-size:10.5px;text-align:center;line-height:1.25}
+.tn b{display:block;font-size:11px}
+.tn .warn{color:var(--warn);font-weight:600}
+.tile.x::after{content:"excluída";position:absolute;inset:0;display:grid;place-items:center;font-size:11px;font-weight:700;color:var(--bad);background:repeating-linear-gradient(135deg,rgba(185,28,28,.07) 0 6px,transparent 6px 12px)}
+.tile.x .tn,.tile.x .fridge{opacity:.35}
+
+/* L2 table */
+.l2{font-size:13px}
+.l2 .row{padding:6px 0;border-bottom:1px solid var(--line)}
+.l2 .row:last-of-type{border-bottom:0}
+.l2 .t{display:flex;justify-content:space-between;gap:6px;font-weight:600}
+.l2 .m{color:var(--ink-2);font-size:12.5px}
+.l2 .w{font-size:12.5px}
+.foot{font-size:11.5px;color:var(--ink-3);margin-top:6px}
+.kb{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;align-self:stretch}
+.kb button{font:inherit;font-size:12.5px;padding:7px 4px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--chat);font-weight:600}
+.kb .wide{grid-column:span 3}
+.kb .half{grid-column:span 1}
+
+/* report */
+.rep{padding:14px;display:flex;flex-direction:column;gap:12px;flex:1;background:var(--surface)}
+.rep h3{margin:0;font-size:16px}
+.rep .meta{color:var(--ink-3);font-size:12px}
+.reco{background:var(--report-soft);border-radius:12px;padding:10px 12px;font-size:13.5px}
+.reco b{display:block;font-size:14.5px}
+.sc-table{width:100%;border-collapse:collapse;font-size:12px}
+.sc-table th{text-align:left;color:var(--ink-3);font-weight:600;padding:4px 2px;border-bottom:1px solid var(--line)}
+.sc-table td{padding:5px 2px;border-bottom:1px solid var(--line);vertical-align:middle}
+.sc-table td.v{width:22%}
+.mb{height:6px;border-radius:3px;background:var(--line);position:relative;overflow:hidden}
+.mb i{position:absolute;inset:0 auto 0 0;background:var(--report);border-radius:3px}
+.mb + span{font-size:11px;color:var(--ink-2)}
+.tot td{font-weight:700;border-bottom:0}
+.risk{font-size:12.5px;display:flex;flex-direction:column;gap:6px}
+.risk div{border-left:3px solid var(--bad);padding:2px 0 2px 8px}
+.risk div.w{border-color:var(--warn)}
+.how{font-size:12px;color:var(--ink-2);background:var(--surface-2);border-radius:10px;padding:8px 10px}
+.pill{display:inline-block;font-size:11px;padding:2px 8px;border-radius:999px;background:var(--report-soft);color:var(--report);font-weight:600}
+
+/* checkout */
+.opt{align-self:stretch;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:10px 12px;font-size:13px}
+.opt .h{display:flex;justify-content:space-between;align-items:center;gap:8px;font-weight:700;font-size:13.5px}
+.lv{font-size:11px;font-weight:700;padding:2px 7px;border-radius:6px;background:var(--store-soft);color:var(--store)}
+.opt p{margin:4px 0 0;color:var(--ink-2)}
+.opt button{margin-top:8px;font:inherit;font-size:12.5px;font-weight:600;padding:6px 12px;border-radius:9px;border:0;background:var(--store);color:#fff}
+.opt.lock{opacity:.55}
+.opt.lock button{background:var(--ink-3)}
+.pix{margin-top:8px;background:var(--surface-2);border:1px dashed var(--store);border-radius:10px;padding:8px;font-size:12px}
+.pix code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;display:block;margin:2px 0 4px;color:var(--ink)}
+.note{font-size:11.5px;color:var(--ink-3)}
+
+/* tracking */
+.tl{list-style:none;margin:6px 0 0;padding:0;font-size:13px}
+.tl li{display:flex;gap:8px;align-items:flex-start;padding:3px 0}
+.tl li::before{content:"";width:9px;height:9px;margin-top:5px;border-radius:50%;background:var(--ok);flex:none}
+.tl li.p::before{background:var(--line)}
+.stars{display:flex;gap:5px;margin-top:6px}
+.stars span{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;border:1px solid var(--line);font-size:13px;font-weight:700;color:var(--ink-2)}
+.stars span.on{background:var(--chat);border-color:var(--chat);color:#fff}
+
+/* data panel */
+.data{margin-top:26px}
+.data h2{font-size:17px;margin:0 0 10px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.stat b{font-size:26px;letter-spacing:-.02em;display:block;line-height:1.1}
+.stat p{margin:6px 0 0;font-size:13px;color:var(--ink-2)}
+.src{font-size:12px;color:var(--ink-3);margin-top:10px}
+@media (max-width:760px){
+  .where,.stats{grid-template-columns:1fr}
+  .flow{grid-template-columns:repeat(6,140px)}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Fluxo do pedido — esboço</h1>
+  <p class="sub">Pedido real de exemplo: cervejeira ~100 L. Dados ilustrativos; os números batem com <span class="num">design.md §4</span>. Deslize as telas para o lado.</p>
+
+  <div class="legend">
+    <span class="tag"><span class="dot d-chat"></span>Chat (Telegram, depois WhatsApp)</span>
+    <span class="tag"><span class="dot d-report"></span>Relatório L3 (PDF + link)</span>
+    <span class="tag"><span class="dot d-store"></span>Loja ou banco (pagamento)</span>
+  </div>
+
+  <nav class="flow" aria-label="Etapas">
+    <button class="step" data-go="s1"><span class="n">1 · <span class="dot d-chat" style="display:inline-block"></span></span><b>Pedido</b><small>texto, áudio ou foto</small></button>
+    <button class="step" data-go="s2"><span class="n">2 · <span class="dot d-chat" style="display:inline-block"></span></span><b>Busca</b><small>5 lojas, ~3 min</small></button>
+    <button class="step" data-go="s3"><span class="n">3 · <span class="dot d-chat" style="display:inline-block"></span></span><b>Top-3 no chat</b><small>L1 imagem + L2 tabela</small></button>
+    <button class="step" data-go="s4"><span class="n">4 · <span class="dot d-report" style="display:inline-block"></span></span><b>Relatório</b><small>L3: placar e riscos</small></button>
+    <button class="step" data-go="s5"><span class="n">5 · <span class="dot d-store" style="display:inline-block"></span></span><b>Comprar</b><small>A0 link · A1 Pix</small></button>
+    <button class="step" data-go="s6"><span class="n">6 · <span class="dot d-chat" style="display:inline-block"></span></span><b>Acompanhar</b><small>entrega + nota</small></button>
+  </nav>
+
+  <div class="where">
+    <div><strong><span class="dot d-chat"></span>Decide no chat</strong>O resumo (L2) e a imagem (L1) chegam na conversa. A maioria decide aqui.</div>
+    <div><strong><span class="dot d-report"></span>Confia no relatório</strong>O L3 mostra o placar, o que foi excluído e por quê. Pesa mais em compra cara.</div>
+    <div><strong><span class="dot d-store"></span>Paga fora do agente</strong>Semana 1: link da loja (A0) ou Pix pronto para pagar no banco (A1). O agente não paga.</div>
+  </div>
+
+  <section class="screens" aria-label="Telas">
+
+    <!-- 1 -->
+    <article class="screen" id="s1">
+      <p class="cap"><span class="n">1</span>Pedido e até 2 perguntas</p>
+      <div class="phone">
+        <div class="bar"><div class="ava">I</div><div><b>Isaura</b><small>assistente de compras da família</small></div></div>
+        <div class="body">
+          <div class="b me">Oi! Preciso de uma cervejeira pra área da churrasqueira. Uns 100 litros, até 3 mil, e tem que chegar antes de sábado<span class="time">21:02</span></div>
+          <div class="b bot">Entendi: cervejeira ~100 L, até <span class="num">R$&nbsp;3.000</span>, entrega até <b>sáb 24/10</b> no seu CEP.
+            <div class="q">Qual a voltagem?</div>
+            <div class="chips"><span class="chip on">220 V</span><span class="chip">110 V</span><span class="chip">Bivolt</span></div>
+            <div class="q">Vai embutir ou fica livre?</div>
+            <div class="chips"><span class="chip on">Livre</span><span class="chip">Embutir</span></div>
+            <span class="time">21:02</span></div>
+          <div class="b me">220 V · livre<span class="time">21:03</span></div>
+          <div class="b bot">Fechado. Já começo a busca e te mando o top-3 aqui.<span class="time">21:03</span></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 2 -->
+    <article class="screen" id="s2">
+      <p class="cap"><span class="n">2</span>Busca com prazo visível</p>
+      <div class="phone">
+        <div class="bar"><div class="ava">I</div><div><b>Isaura</b><small>buscando…</small></div></div>
+        <div class="body">
+          <div class="b bot">Buscando em 5 lojas · leva uns 3 min
+            <ul class="prog num">
+              <li><span>Marketplace A</span><span class="okc">3 ofertas</span></li>
+              <li><span>Marketplace B</span><span class="okc">2 ofertas</span></li>
+              <li><span>Varejista C</span><span class="okc">1 oferta</span></li>
+              <li><span>Marketplace D</span><span class="okc">1 oferta</span></li>
+              <li><span>Loja do fabricante E</span><span class="okc">1 oferta</span></li>
+              <li><span>Checando vendedores e frete até seu CEP</span><span class="okc">feito</span></li>
+            </ul>
+            <span class="time">21:05</span></div>
+          <div class="b bot">8 ofertas encontradas. 1 descartada por risco (vendedor novo com preço fora da curva). Montando o comparativo…<span class="time">21:06</span></div>
+          <p class="note" style="margin:auto 4px 0">Tempo até o top-3: 2 min 41 s · meta da semana: até 10 min (AC-4)</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- 3 -->
+    <article class="screen" id="s3">
+      <p class="cap"><span class="n">3</span>O resumo: L1 (imagem) + L2 (texto)</p>
+      <div class="phone">
+        <div class="bar"><div class="ava">I</div><div><b>Isaura</b><small>top-3 pronto</small></div></div>
+        <div class="body">
+          <div class="l1" role="img" aria-label="Imagem com 6 opções e notas">
+            <h4>Cervejeira ~100 L <span>até sáb 24/10</span></h4>
+            <div class="grid num">
+              <div class="tile"><span class="rk">#1</span><span class="sc hi">8.4</span><div class="fridge"></div><div class="tn"><b>Marca A 101 L</b>R$&nbsp;2.749 · qui</div></div>
+              <div class="tile"><span class="rk">#2</span><span class="sc mid">7.9</span><div class="fridge"></div><div class="tn"><b>Marca B 100 L</b>R$&nbsp;2.588 · sex</div></div>
+              <div class="tile"><span class="rk">#3</span><span class="sc mid">7.6</span><div class="fridge"></div><div class="tn"><b>Marca D 98 L</b>R$&nbsp;2.890 · qui</div></div>
+              <div class="tile"><span class="rk">#4</span><span class="sc mid">7.0</span><div class="fridge"></div><div class="tn"><b>Marca C 96 L</b>R$&nbsp;2.388 · <span class="warn">seg 26/10</span></div></div>
+              <div class="tile"><span class="rk">#5</span><span class="sc">6.9</span><div class="fridge"></div><div class="tn"><b>Marca F 105 L</b>R$&nbsp;3.199 · qui</div></div>
+              <div class="tile x"><span class="rk">–</span><div class="fridge"></div><div class="tn"><b>Marca B 100 L</b>R$&nbsp;1.899</div></div>
+            </div>
+          </div>
+          <div class="b bot l2 num">
+            <b>Top-3 para você</b>
+            <div class="row"><div class="t"><span>1 · Marca A 101 L</span><span>8.4</span></div><div class="m">R$&nbsp;2.749 · frete grátis · qui 22/10 · loja oficial</div><div class="w">2 anos de garantia; R$&nbsp;141 abaixo da mediana</div></div>
+            <div class="row"><div class="t"><span>2 · Marca B 100 L</span><span>7.9</span></div><div class="m">R$&nbsp;2.588 · sex 23/10 · loja oficial</div><div class="w">R$&nbsp;161 mais barata que a #1; garantia de 1 ano</div></div>
+            <div class="row"><div class="t"><span>3 · Marca D 98 L</span><span>7.6</span></div><div class="m">R$&nbsp;2.890 · qui 22/10 · loja oficial</div><div class="w">chega cedo; 3 L a menos que a #1</div></div>
+            <div class="foot">8 ofertas · 5 lojas · 1 excluída · mediana R$&nbsp;2.890. A mais barata válida (R$&nbsp;2.388) chega seg 26/10, depois de sábado.</div>
+            <span class="time">21:06</span>
+          </div>
+          <div class="kb">
+            <button>Comprar #1</button><button>Comprar #2</button><button>Comprar #3</button>
+            <button class="wide">Relatório completo (PDF)</button>
+            <button class="wide">Ajustar busca</button>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 4 -->
+    <article class="screen" id="s4">
+      <p class="cap"><span class="n">4</span>Relatório L3 (PDF ou link)</p>
+      <div class="phone">
+        <div class="bar report"><div class="ava">L3</div><div><b>Relatório · Cervejeira ~100 L</b><small>21/10 · 3 páginas · 23 fontes</small></div></div>
+        <div class="rep num">
+          <div class="reco"><b>Recomendação: Marca A 101 L — R$&nbsp;2.749</b>Melhor equilíbrio entre garantia (24 meses), confiança da loja e prazo. Custa R$&nbsp;141 abaixo da mediana das 7 ofertas válidas.</div>
+          <table class="sc-table">
+            <thead><tr><th>Critério</th><th>Peso</th><th>#1 A</th><th>#2 B</th><th>#3 D</th></tr></thead>
+            <tbody>
+              <tr><td>Qualidade</td><td>25%</td><td class="v"><div class="mb"><i style="width:85%"></i></div><span>8.5</span></td><td class="v"><div class="mb"><i style="width:79%"></i></div><span>7.9</span></td><td class="v"><div class="mb"><i style="width:82%"></i></div><span>8.2</span></td></tr>
+              <tr><td>Custo-benefício</td><td>25%</td><td class="v"><div class="mb"><i style="width:62%"></i></div><span>6.2</span></td><td class="v"><div class="mb"><i style="width:76%"></i></div><span>7.6</span></td><td class="v"><div class="mb"><i style="width:50%"></i></div><span>5.0</span></td></tr>
+              <tr><td>Confiança</td><td>20%</td><td class="v"><div class="mb"><i style="width:95%"></i></div><span>9.5</span></td><td class="v"><div class="mb"><i style="width:90%"></i></div><span>9.0</span></td><td class="v"><div class="mb"><i style="width:90%"></i></div><span>9.0</span></td></tr>
+              <tr><td>Popularidade</td><td>10%</td><td class="v"><div class="mb"><i style="width:88%"></i></div><span>8.8</span></td><td class="v"><div class="mb"><i style="width:75%"></i></div><span>7.5</span></td><td class="v"><div class="mb"><i style="width:70%"></i></div><span>7.0</span></td></tr>
+              <tr><td>Prazo</td><td>10%</td><td class="v"><div class="mb"><i style="width:100%"></i></div><span>10</span></td><td class="v"><div class="mb"><i style="width:80%"></i></div><span>8.0</span></td><td class="v"><div class="mb"><i style="width:100%"></i></div><span>10</span></td></tr>
+              <tr><td>Garantia</td><td>10%</td><td class="v"><div class="mb"><i style="width:90%"></i></div><span>9.0</span></td><td class="v"><div class="mb"><i style="width:70%"></i></div><span>7.0</span></td><td class="v"><div class="mb"><i style="width:80%"></i></div><span>8.0</span></td></tr>
+              <tr class="tot"><td>Nota</td><td></td><td>8.4</td><td>7.9</td><td>7.6</td></tr>
+            </tbody>
+          </table>
+          <div class="risk">
+            <div><b>Excluída:</b> Marca B 100 L por R$&nbsp;1.899 — 34% abaixo da mediana, vendedor com 3 meses e 41 avaliações. É o padrão das lojas falsas.</div>
+            <div class="w"><b>Mais barata válida:</b> Marca C 96 L por R$&nbsp;2.388 — chega seg 26/10, depois do seu prazo.</div>
+          </div>
+          <div class="how"><b>Como calculamos:</b> referência = mediana do custo final (preço + frete até seu CEP) das ofertas válidas, R$&nbsp;2.890. Custo-benefício = 5 + 25 × (referência − custo) ÷ referência. <span class="pill">pesos: perfil duráveis v1</span></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 5 -->
+    <article class="screen" id="s5">
+      <p class="cap"><span class="n">5</span>Comprar no nível de autonomia</p>
+      <div class="phone">
+        <div class="bar store"><div class="ava">I</div><div><b>Isaura</b><small>comprar #1 · Marca A 101 L</small></div></div>
+        <div class="body num">
+          <div class="b me">Comprar #1<span class="time">21:09</span></div>
+          <div class="opt"><div class="h">Abrir na loja <span class="lv">A0</span></div><p>Você finaliza no site da loja. Eu registro o pedido quando você confirmar.</p><button>Abrir link</button></div>
+          <div class="opt"><div class="h">Preparar o Pix <span class="lv">A1</span></div><p>Eu preencho carrinho e entrega e te mando o Pix. Você paga no seu banco.</p>
+            <div class="pix"><b>R$&nbsp;2.749,00</b> · recebedor: Marketplace A · CNPJ conferido<code>00020126···5204 0000</code><span class="note">vale 30 min · se o preço mudar mais de 3% eu paro e te aviso</span></div>
+            <button>Copiar código Pix</button></div>
+          <div class="opt lock"><div class="h">Pagar pela conta da família <span class="lv">A2</span></div><p>Libera depois de 5 pedidos sem erro. Teto da conta: R$&nbsp;300.</p><button disabled>Bloqueado na semana 1</button></div>
+          <p class="note">O agente nunca envia pagamentos na semana 1 (AC-8).</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- 6 -->
+    <article class="screen" id="s6">
+      <p class="cap"><span class="n">6</span>Acompanhar e dar nota</p>
+      <div class="phone">
+        <div class="bar"><div class="ava">I</div><div><b>Isaura</b><small>pedido em andamento</small></div></div>
+        <div class="body num">
+          <div class="b bot">Pedido da Marca A 101 L
+            <ul class="tl">
+              <li>Pix pago · qua 21/10 21:14</li>
+              <li>Enviado · qua 21/10</li>
+              <li>Saiu para entrega · qui 22/10</li>
+              <li>Entregue · qui 22/10 15:40</li>
+            </ul><span class="time">qui 15:41</span></div>
+          <div class="b bot">Chegou certinho? Dá uma nota:
+            <div class="stars"><span>1</span><span>2</span><span>3</span><span>4</span><span class="on">5</span></div>
+            <span class="time">qui 15:41</span></div>
+          <div class="b me">5<span class="time">qui 15:52</span></div>
+          <div class="b bot">Valeu! Registrei: entregue 2 dias antes do prazo, R$&nbsp;141 abaixo da mediana, nota 5.<span class="time">qui 15:52</span></div>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section class="data">
+    <h2>Por que esse formato (dados)</h2>
+    <div class="stats num">
+      <div class="stat"><b>79–97%</b><p>Diferença de preço do mesmo modelo de celular entre lojas online de Vitória. O frete nem entrou na conta.</p></div>
+      <div class="stat"><b>~45%</b><p>Das denúncias de golpe digital em 2025 envolveram compras, quase sempre em lojas falsas imitando grandes varejistas.</p></div>
+      <div class="stat"><b>44%</b><p>Do checkout online no Brasil em 2026 foi Pix, contra 41% de cartão. O trilho do A1/A2 já é o padrão.</p></div>
+    </div>
+    <p class="src">Fontes: Procon Vitória (Folha Vitória), SOS Golpe + CloudWalk, EBANX Beyond Borders 2026. Links em specs/0002-family-cohort-w1/product.md.</p>
+  </section>
+</div>
+<script>
+document.querySelectorAll('.step').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var el = document.getElementById(btn.getAttribute('data-go'));
+    if (el) el.scrollIntoView({behavior:'smooth', block:'nearest', inline:'start'});
+  });
+});
+</script>
+</body>
+</html>

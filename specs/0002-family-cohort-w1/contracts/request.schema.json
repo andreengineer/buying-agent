@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "contracts/request.schema.json",
+  "title": "Request",
+  "description": "Normalized purchase request from a cohort member (AC-1). Stored locally only, never committed.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["request_id", "requester_id", "channel", "received_at", "item", "constraints", "autonomy_level", "status"],
+  "properties": {
+    "request_id": { "type": "string", "pattern": "^req_[0-9]{8}_[a-z0-9]{6}$" },
+    "requester_id": { "type": "string", "description": "Local alias (e.g. fam_01). Never a phone number or name in shared files." },
+    "channel": { "enum": ["telegram", "whatsapp"] },
+    "received_at": { "type": "string", "format": "date-time" },
+    "raw_modality": { "enum": ["text", "audio", "image"] },
+    "item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["query", "category"],
+      "properties": {
+        "query": { "type": "string", "minLength": 2 },
+        "category": { "enum": ["durables", "electronics", "home", "gifts", "pharmacy", "grocery", "other"] },
+        "must_have": { "type": "array", "items": { "type": "string" } },
+        "nice_to_have": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "constraints": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["budget_max_brl", "cep"],
+      "properties": {
+        "budget_max_brl": { "type": "number", "exclusiveMinimum": 0 },
+        "deadline": { "type": "string", "format": "date" },
+        "cep": { "type": "string", "pattern": "^[0-9]{5}-?[0-9]{3}$" },
+        "voltage": { "enum": ["110", "220", "bivolt", "n/a"] }
+      }
+    },
+    "clarifications_asked": { "type": "integer", "minimum": 0, "maximum": 2 },
+    "autonomy_level": { "enum": ["A0", "A1", "A2"] },
+    "status": { "enum": ["new", "clarifying", "sourcing", "answered", "purchased", "delivered", "rated", "cancelled"] }
+  }
+}

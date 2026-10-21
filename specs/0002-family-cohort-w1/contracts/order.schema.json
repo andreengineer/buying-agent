@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "contracts/order.schema.json",
+  "title": "Order",
+  "description": "Ledger row for a purchase decision (AC-6, AC-7, AC-8). Stored locally only, never committed.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["order_id", "request_id", "offer_id", "autonomy_level", "payment_method", "amount_brl", "merchant", "status", "created_at"],
+  "properties": {
+    "order_id": { "type": "string", "pattern": "^ord_[0-9]{8}_[a-z0-9]{6}$" },
+    "request_id": { "type": "string" },
+    "offer_id": { "type": "string" },
+    "autonomy_level": { "enum": ["A0", "A1", "A2"] },
+    "payment_method": { "enum": ["store_checkout_by_human", "pix_copia_cola_by_human", "pix_agent_capped"] },
+    "amount_brl": { "type": "number", "exclusiveMinimum": 0 },
+    "merchant": { "type": "string" },
+    "status": { "enum": ["link_sent", "pix_ready", "paid_by_human", "shipped", "delivered", "returned", "cancelled"] },
+    "savings_vs_reference_brl": { "type": "number" },
+    "rating_1_5": { "type": ["integer", "null"], "minimum": 1, "maximum": 5 },
+    "created_at": { "type": "string", "format": "date-time" },
+    "delivered_at": { "type": ["string", "null"], "format": "date-time" }
+  }
+}
