@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "contracts/offer.schema.json",
+  "title": "Offer",
+  "description": "One purchasable offer collected for a Request (AC-3). landed_cost_brl = price_brl + shipping_brl to the request CEP.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["offer_id", "request_id", "source", "title", "url", "price_brl", "shipping_brl", "landed_cost_brl", "seller", "assurance", "collected_at"],
+  "properties": {
+    "offer_id": { "type": "string", "pattern": "^off_[a-z0-9]{8}$" },
+    "request_id": { "type": "string" },
+    "source": { "type": "string", "description": "Adapter id, e.g. marketplace slug or aggregator slug" },
+    "title": { "type": "string" },
+    "brand": { "type": "string" },
+    "model": { "type": "string" },
+    "url": { "type": "string", "format": "uri" },
+    "price_brl": { "type": "number", "minimum": 0 },
+    "shipping_brl": { "type": "number", "minimum": 0 },
+    "landed_cost_brl": { "type": "number", "minimum": 0 },
+    "delivery_date": { "type": ["string", "null"], "format": "date" },
+    "seller": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "official_store"],
+      "properties": {
+        "name": { "type": "string" },
+        "official_store": { "type": "boolean" },
+        "account_age_months": { "type": ["integer", "null"], "minimum": 0 },
+        "review_count": { "type": ["integer", "null"], "minimum": 0 },
+        "reputation_0_10": { "type": ["number", "null"], "minimum": 0, "maximum": 10 },
+        "complaint_index_0_10": { "type": ["number", "null"], "minimum": 0, "maximum": 10 }
+      }
+    },
+    "product_signals": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "rating_0_5": { "type": ["number", "null"], "minimum": 0, "maximum": 5 },
+        "rating_count": { "type": ["integer", "null"], "minimum": 0 },
+        "warranty_months": { "type": ["integer", "null"], "minimum": 0 },
+        "specs": { "type": "object" }
+      }
+    },
+    "assurance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["passed", "failed_checks"],
+      "properties": {
+        "passed": { "type": "boolean" },
+        "failed_checks": {
+          "type": "array",
+          "items": { "enum": ["price_outlier_low", "new_seller", "low_reviews", "no_cnpj", "unofficial_listing", "spec_mismatch"] }
+        }
+      }
+    },
+    "flags": {
+      "type": "array",
+      "description": "Constraint flags. They lower scores but do not exclude the offer.",
+      "items": { "enum": ["deadline_miss", "over_budget", "out_of_vertical"] }
+    },
+    "evidence": { "type": "array", "items": { "type": "string", "format": "uri" } },
+    "collected_at": { "type": "string", "format": "date-time" }
+  }
+}
